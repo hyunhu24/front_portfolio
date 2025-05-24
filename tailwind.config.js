@@ -13,19 +13,19 @@ module.exports = {
         background: {
           DEFAULT: '#FFF9F4',
         },
-        PrimaryGreen: {
+        primarygreen: {
           light: '#73C087',
           DEFAULT: '#52A668',
         },
-        PrimaryYellow: {
+        primaryyellow: {
           light: '#FBD462',
           DEFAULT: '#F6C33B',
         },
-        PrimaryRed: {
+        primaryred: {
           light: '#EF9F8B',
           DEFAULT: '#F1605A',
         },
-        PrimaryBlue: {
+        primaryblue: {
           light: '#8BB0EF',
           DEFAULT: '#6493E7',
        },

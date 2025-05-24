@@ -1,30 +1,86 @@
-import React from 'react';
-import logo from './assets/images/logo.svg';
+//1번
+
+import React, { useRef } from 'react';
 import './styles/App.css';
+import Main from './pages/Main';
+import Intro from './pages/Intro';
 
 const App: React.FC = () => {
+  const sectionRefs = [useRef<HTMLDivElement>(null), useRef<HTMLDivElement>(null)];
+  const isScrolling = useRef(false);
+  let touchStartY = useRef(0);
+
+  // 휠/터치 이벤트로 부드럽게 한 섹션씩 이동
+  const handleScroll = (direction: 'up' | 'down') => {
+    if (isScrolling.current) return;
+    isScrolling.current = true;
+    const scrollTop = window.scrollY || window.pageYOffset;
+    const vh = window.innerHeight;
+    let idx = Math.round(scrollTop / vh);
+    let nextIdx = direction === 'down' ? Math.min(idx + 1, sectionRefs.length - 1) : Math.max(idx - 1, 0);
+    sectionRefs[nextIdx].current?.scrollIntoView({ behavior: 'smooth' });
+    setTimeout(() => { isScrolling.current = false; }, 700);
+  };
+
+  // 휠 이벤트 핸들러
+  const onWheel = (e: React.WheelEvent) => {
+    if (e.deltaY > 0) handleScroll('down');
+    else if (e.deltaY < 0) handleScroll('up');
+  };
+
+  // 터치 이벤트 핸들러
+  const onTouchStart = (e: React.TouchEvent) => {
+    touchStartY.current = e.touches[0].clientY;
+  };
+  const onTouchEnd = (e: React.TouchEvent) => {
+    const touchEndY = e.changedTouches[0].clientY;
+    if (touchStartY.current - touchEndY > 50) handleScroll('down');
+    else if (touchEndY - touchStartY.current > 50) handleScroll('up');
+  };
+
   return (
-    <div className="min-h-screen bg-gray-100">
-      <header className="flex flex-col items-center justify-center min-h-screen p-4">
-        <img 
-          src={logo} 
-          className="w-64 h-64 animate-spin" 
-          alt="logo" 
-        />
-        <p className="mt-4 text-xl text-gray-700 font-notosans">
-          Edit <code className="bg-gray-200 p-1 rounded font-skranji">src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="mt-4 text-blue-500 hover:text-blue-700 transition-colors"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div
+      className="w-full h-screen overflow-hidden"
+      tabIndex={-1}
+      onWheel={onWheel}
+      onTouchStart={onTouchStart}
+      onTouchEnd={onTouchEnd}
+      style={{ scrollSnapType: 'y mandatory', outline: 'none' }}
+    >
+      <div
+        ref={sectionRefs[0]}
+        style={{ height: '100vh', scrollSnapAlign: 'start' }}
+        tabIndex={0}
+      >
+        <Main />
+      </div>
+      <div
+        ref={sectionRefs[1]}
+        style={{ height: '100vh', scrollSnapAlign: 'start' }}
+        tabIndex={0}
+      >
+        <Intro />
+      </div>
     </div>
   );
-}
+};
 
 export default App; 
+
+//2번
+
+// import React from 'react';
+// import Main from './pages/Main';
+// import Intro from './pages/Intro';
+// import './styles/App.css';
+
+// const App: React.FC = () => {
+//   return (
+//     <div className="w-full min-h-screen">
+//       <Main />
+//       <Intro />
+//     </div>
+//   );
+// };
+
+// export default App; 

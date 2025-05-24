@@ -5,3 +5,6 @@ declare module "*.svg" {
   export { ReactComponent };
   export default content;
 } 
+
+declare module '@ap.cx/react-fullpage';
+declare module 'react-page-scroller';
