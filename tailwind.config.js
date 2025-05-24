@@ -4,7 +4,42 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        notosans: ['Noto Sans KR', 'sans-serif'],
+        skranji: ['Skranji', 'sans-serif'],
+      },
+      colors: {
+        background: {
+          DEFAULT: '#FFF9F4',
+        },
+        PrimaryGreen: {
+          light: '#73C087',
+          DEFAULT: '#52A668',
+        },
+        PrimaryYellow: {
+          light: '#FBD462',
+          DEFAULT: '#F6C33B',
+        },
+        PrimaryRed: {
+          light: '#EF9F8B',
+          DEFAULT: '#F1605A',
+        },
+        PrimaryBlue: {
+          light: '#8BB0EF',
+          DEFAULT: '#6493E7',
+       },
+       white: {
+        light: '#FEFAF2',
+        DEFAULT: '#FFFFFF',
+       },
+       black: {
+        light: '#797979',
+        DEFAULT: '#000000',
+       },
+       
+      },
+    },
   },
   plugins: [],
 }
