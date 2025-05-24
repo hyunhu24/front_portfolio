@@ -48,7 +48,7 @@ const Intro: React.FC = () => {
       <div className="absolute left-0 bottom-0 w-full flex flex-col items-center z-20">
         <BubbleBox
           layout="horizontal"
-          color="#6493E7"
+          color="#F6C33B"
           tailDirection="top"
           tailPosition={50}
           style={{

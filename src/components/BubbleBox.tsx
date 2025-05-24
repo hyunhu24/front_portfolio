@@ -41,6 +41,7 @@ const BubbleBox: React.FC<BubbleBoxProps> = ({
       borderRight: `${tailSize/1}px solid transparent`,
       borderBottom: `${tailSize}px solid ${color}`,
       borderTop: 'none',
+      // backgroundColor: `${color}`,
     },
     bottom: {
       left: `${tailPosition}%`,
