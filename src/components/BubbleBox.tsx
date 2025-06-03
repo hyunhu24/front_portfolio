@@ -76,8 +76,8 @@ const BubbleBox: React.FC<BubbleBoxProps> = ({
   const layoutStyles: Record<string, React.CSSProperties> = {
     horizontal: {
       width: '100%',
-      height: 'auto',
-      minHeight: 120,
+      height: '100%',
+      maxHeight: '100%',
       borderRadius: 0,
       display: 'flex',
       alignItems: 'center',
