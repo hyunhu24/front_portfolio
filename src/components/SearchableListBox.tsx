@@ -27,7 +27,7 @@ const SearchableListBox: React.FC<SearchableListBoxProps> = ({
   // 8BB0EF
   // 7EA3E1
   return (
-    <div className="w-[65%] bg-[#8BB0EF] rounded-2xl shadow-lg p-0">
+    <div className="w-[65%]  bg-[#8BB0EF] rounded-2xl shadow-lg p-0">
       {/* Header */}
       {/* <div className="flex items-center px-4 py-3 bg-[#A6B3C2]/80 border-b border-[#A6B3C2] rounded-t-2xl">
         <span className="flex-1 text-lg font-bold text-white select-none">{title}</span>

@@ -93,14 +93,12 @@ const Main: React.FC = () => {
             padding: 0,
           }}
         >
-          <div className="w-full flex flex-col gap-0.5">
-            
+          <div className="w-full h-[100%] flex gap-0.5 pt-8 items-center justify-center">
               <SearchableListBox
                 title="채현후"
                 items = {itemsList}
                 onClose={() => setOpen(false)}
               />
-            
           </div>
         </BubbleBox>
 
