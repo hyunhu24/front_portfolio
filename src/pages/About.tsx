@@ -1,3 +1,4 @@
+import React from "react";
 import BubbleBox from "components/BubbleBox";
 
 const About : React.FC = () => {
@@ -5,7 +6,6 @@ const About : React.FC = () => {
     return(
         <div className="w-full h-full min-h-screen bg-background font-notosans">
             <div className="w-full h-full flex-col items-center justify-center">
-                
                 <BubbleBox
                     layout="horizontal"
                     color="#F1605A"

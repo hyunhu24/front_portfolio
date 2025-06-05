@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { IconType } from 'react-icons';
+import { IoIosSearch } from "react-icons/io";
 
 interface ListItem {
   label: string;
@@ -9,8 +11,14 @@ interface ListItem {
 interface SearchableListBoxProps {
   title: string;
   items: ListItem[];
-  onClose: () => void;
+  onClose?: () => void;
   showSearch?: boolean;
+  showList?: boolean;
+  // searchIcon?: boolean
+  onFocus?: () => void; 
+  onBlur?: () => void; 
+  icon?: boolean;
+  IconName?: IconType;
 }
 
 const SearchableListBox: React.FC<SearchableListBoxProps> = ({
@@ -18,9 +26,15 @@ const SearchableListBox: React.FC<SearchableListBoxProps> = ({
   items,
   onClose,
   showSearch = true,
+  showList = true,
+  onFocus,
+  onBlur,
+  icon = true,
+  IconName,
+  // searchIcon = true,
 }) => {
   const [search, setSearch] = useState('');
-
+  
   const filteredItems = items.filter(item =>
     item.label.toLowerCase().includes(search.toLowerCase())
   );
@@ -35,21 +49,26 @@ const SearchableListBox: React.FC<SearchableListBoxProps> = ({
       </div> */}
       {/* Search */}
       {showSearch && (
-        <div className="p-2 bg-[#8BB0EF] relative border-b border-[#F8EEEE] rounded-tl-[28px] rounded-tr-[28px]">
+        <div className={`p-2 bg-[#8BB0EF] relative  
+        ${showList ? 'border-b-1 border-[#F8EEEE] rounded-tl-[28px] rounded-tr-[28px] ' : 'rounded-[100%]'}`}>
           <input
             type="text"
             value={search}
+            onFocus={onFocus}
+            onBlur={onBlur}
             onChange={e => setSearch(e.target.value)}
             placeholder="채현후"
-            className="w-full px-3 py-2 rounded bg-transparent text-white focus:outline-none placeholder:text-white text-[28px]"
+            className="w-full px-3 py-2  bg-transparent text-white focus:outline-none placeholder:text-white text-[28px]"
           />
-           <button 
-           onClick={() => setSearch('')} 
-           className="ml-auto text-black/60 hover:text-black text-lg absolute right-6 top-1/2 -translate-y-1/2 z-10">✕</button>
+          <button 
+          onClick={() => setSearch('')} 
+          className="ml-auto text-black/60 hover:text-black text-lg absolute right-6 top-1/2 -translate-y-1/2 z-10">
+              {icon ? <IoIosSearch  /> : '✕'}
+          </button>
         </div>
       )}
       {/* List */}
-      <div className="flex flex-col divide-y divide-[#8BB0EF]">
+      {showList && <div className="flex flex-col divide-y divide-[#8BB0EF]">
         {filteredItems.length === 0 && (
           <div className="px-4 py-3 text-white">검색 결과가 없습니다.</div>
         )}
@@ -66,7 +85,7 @@ const SearchableListBox: React.FC<SearchableListBoxProps> = ({
             {item.label}
           </button>
         ))}
-      </div>
+      </div>}
     </div>
   );
 };

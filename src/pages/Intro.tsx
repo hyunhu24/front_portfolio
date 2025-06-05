@@ -1,5 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import BubbleBox from '../components/BubbleBox';
+import SearchableListBox from 'components/SearchableListBox';
+import { useNavigate } from 'react-router-dom';
+import { IconType } from 'react-icons';
+import { IoIosSearch } from "react-icons/io";
+
+const MyIcon: IconType = IoIosSearch;
 
 const colorDots = [
   'bg-primaryred',
@@ -13,6 +19,37 @@ const colorDots = [
 const paginationDots = [0, 1, 2, 3, 4, 5];
 
 const Intro: React.FC = () => {
+  const navigate = useNavigate();
+  const [isListVisible, setIsListVisible] = useState(false);
+
+  const itemsList = [
+    {
+      label: '성장과 도전을 멈추지 않는 개발자 채현후',
+      onClick: () => navigate('/'),
+    },
+    {
+      label: 'UI와 UX를 고민하는 프론트 개발자 채현후',
+      active: true,
+      onClick: () => navigate('/intro'),
+    },
+    {
+      label: '새로운 도전을 통해 성장하는 프론트 개발자 채현후',
+      onClick: () => navigate('/intro'),
+    },
+  ];
+
+  const handleFocus = () => {
+    setIsListVisible(true);
+  };
+
+  const handleClose = () => {
+    setIsListVisible(false);
+  };
+
+  const handleBlur = () => {
+    setIsListVisible(false);
+  };
+
   return (
     <div className="w-full h-full min-h-screen bg-background font-notosans">
       {/* 오른쪽 상단 컬러 점 */}
@@ -51,7 +88,15 @@ const Intro: React.FC = () => {
           }}
         >
           <div className="w-full flex flex-col gap-0.5">
-            안에 내용
+            <SearchableListBox 
+              title="채현후" 
+              items={itemsList} 
+              IconName={MyIcon}
+              icon={true}  // true면 MyIcon이 표시되고, false면 '✕'가 표시됨
+              showList={isListVisible}
+              onFocus={handleFocus}
+              onBlur={handleBlur}
+            />
           </div>
         </BubbleBox>
       </div>

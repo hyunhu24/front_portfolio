@@ -8,3 +8,4 @@ declare module "*.svg" {
 
 declare module '@ap.cx/react-fullpage';
 declare module 'react-page-scroller';
+declare module 'react-icons/*';  
