@@ -1,11 +1,8 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import BubbleBox from '../components/BubbleBox';
 import SearchableListBox from 'components/SearchableListBox';
-import { useNavigate } from 'react-router-dom';
-import { IconType } from 'react-icons';
-import { IoIosSearch } from "react-icons/io";
-
-const MyIcon: IconType = IoIosSearch;
+import { useLocation, useNavigate } from 'react-router-dom';
+import { useItems } from 'context/ItemContext';
 
 const colorDots = [
   'bg-primaryred',
@@ -19,31 +16,32 @@ const colorDots = [
 const paginationDots = [0, 1, 2, 3, 4, 5];
 
 const Intro: React.FC = () => {
-  const navigate = useNavigate();
   const [isListVisible, setIsListVisible] = useState(false);
+  const { selectedIndex, setSelectedIndex, items, selectedItem } = useItems();
+  const navigate = useNavigate();
+  const location = useLocation();
 
-  const itemsList = [
-    {
-      label: '성장과 도전을 멈추지 않는 개발자 채현후',
-      onClick: () => navigate('/'),
-    },
-    {
-      label: 'UI와 UX를 고민하는 프론트 개발자 채현후',
-      active: true,
-      onClick: () => navigate('/intro'),
-    },
-    {
-      label: '새로운 도전을 통해 성장하는 프론트 개발자 채현후',
-      onClick: () => navigate('/intro'),
-    },
-  ];
+  console.log(selectedItem, items, selectedItem);
+
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const idx = parseInt(params.get('item') ?? '1', 10);
+    if (!isNaN(idx) && idx >= 0 && idx < items.length) {
+      setSelectedIndex(idx);
+    }
+  }, [location, setSelectedIndex, items.length]);
+
+  const introItems = items.map((item, idx) => ({
+    ...item,
+    active: idx === selectedIndex,
+    onClick: () => {
+      setSelectedIndex(idx);
+      navigate(`/intro?item=${idx}`);
+    }
+  }));
 
   const handleFocus = () => {
     setIsListVisible(true);
-  };
-
-  const handleClose = () => {
-    setIsListVisible(false);
   };
 
   const handleBlur = () => {
@@ -84,28 +82,49 @@ const Intro: React.FC = () => {
             // minHeight: '430px',
             width: '50%',
             maxWidth: '50vw',
-            padding: 0,
+            padding: '50px 50px',
           }}
         >
-          <div className="w-full flex flex-col gap-0.5">
-            <SearchableListBox 
-              title="채현후" 
-              items={itemsList} 
-              IconName={MyIcon}
-              icon={true}  // true면 MyIcon이 표시되고, false면 '✕'가 표시됨
-              showList={isListVisible}
-              onFocus={handleFocus}
-              onBlur={handleBlur}
-            />
+          <div className="w-full h-full flex flex-col gap-[60px] justify-center items-center">
+          <SearchableListBox 
+            title={selectedItem.label}
+            items={introItems}
+            icon={true}
+            showList={isListVisible}
+            onFocus={handleFocus}
+            onBlur={handleBlur}
+            bgColor='#EF9F8B'
+            activeColor='#EA8268'
+            width='100%'
+            searchTextSize='20px'
+            listTextSize='18px'
+          />
+           <div className='w-full max-w-[700px] flex flex-col gap-6 items-start'>
+          <div className='text-white text-[58px] font-bold'>
+            {selectedItem.introText?.title}
           </div>
+          <div className='text-white text-[40px] text-left whitespace-pre-line'>
+            {selectedItem.introText?.subtitle}
+          </div>
+        </div>
+        <div className='w-full max-w-[700px] flex flex-col gap-6 items-start'>
+          {selectedItem.introText?.description.map((text, index) => (
+            <div key={index} className='text-white text-[28px] text-left whitespace-pre-line'>
+              {text}
+            </div>
+          ))}
+        </div>
+        </div>
+
+        <div className="absolute left-[50%] translate-x-[-50%] bottom-10 flex gap-3">
+          {paginationDots.map(i => (
+            <div key={i} className={`w-4 h-4 rounded-full ${i < 4 ? 'bg-white/70' : 'bg-white'}`}></div>
+          ))}
+        </div>
         </BubbleBox>
       </div>
         {/* 페이지네이션 */}
-          <div className="absolute left-16 bottom-10 flex gap-3">
-            {paginationDots.map(i => (
-              <div key={i} className={`w-4 h-4 rounded-full ${i < 4 ? 'bg-white/70' : 'bg-white'}`}></div>
-            ))}
-          </div>
+          
       
     </div>
   );

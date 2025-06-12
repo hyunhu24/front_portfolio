@@ -93,48 +93,48 @@ const App: React.FC = () => {
   const aboutRef = useRef<HTMLDivElement>(null);
 
   return (
-    <div className="w-full min-h-screen">
-      <ScrollRouter>
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <div
-                ref={mainRef}
-                style={{ height: '100vh', scrollSnapAlign: 'start' }}
-                tabIndex={0}
-              >
-                <Main />
-              </div>
-            }
-          />
-          <Route
-            path="/intro"
-            element={
-              <div
-                ref={introRef}
-                style={{ height: '100vh', scrollSnapAlign: 'start' }}
-                tabIndex={0}
-              >
-                <Intro />
-              </div>
-            }
-          />
-          <Route
-            path="/about"
-            element={
-              <div
-                ref={aboutRef}
-                style={{ height: '100vh', scrollSnapAlign: 'start' }}
-                tabIndex={0}
-              >
-                <About />
-              </div>
-            }
-          />
-        </Routes>
-      </ScrollRouter>
-    </div>
+      <div className="w-full min-h-screen">
+        <ScrollRouter>
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <div
+                  ref={mainRef}
+                  style={{ height: '100vh', scrollSnapAlign: 'start' }}
+                  tabIndex={0}
+                >
+                  <Main />
+                </div>
+              }
+            />
+            <Route
+              path="/intro"
+              element={
+                <div
+                  ref={introRef}
+                  style={{ height: '100vh', scrollSnapAlign: 'start' }}
+                  tabIndex={0}
+                >
+                  <Intro />
+                </div>
+              }
+            />
+            <Route
+              path="/about"
+              element={
+                <div
+                  ref={aboutRef}
+                  style={{ height: '100vh', scrollSnapAlign: 'start' }}
+                  tabIndex={0}
+                >
+                  <About />
+                </div>
+              }
+            />
+          </Routes>
+        </ScrollRouter>
+      </div>
   );
 };
 

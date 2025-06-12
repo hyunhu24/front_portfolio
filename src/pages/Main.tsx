@@ -22,16 +22,18 @@ const Main: React.FC = () => {
   const itemsList = [
     {
       label: '성장과 도전을 멈추지 않는 개발자 채현후',
-      onClick: () => navigate('/'),
+      active: false,
+      onClick: () => navigate('/intro?item=0'),
     },
     {
       label: 'UI와 UX를 고민하는 프론트 개발자 채현후',
       active: true,
-      onClick: () => navigate('/intro'),
+      onClick: () => navigate('/intro?item=1'),
     },
     {
       label: '새로운 도전을 통해 성장하는 프론트 개발자 채현후',
-      onClick: () => navigate('/intro'),
+      active: false,
+      onClick: () => navigate('/intro?item=2'),
     },
   ];
 
@@ -97,6 +99,7 @@ const Main: React.FC = () => {
               <SearchableListBox
                 title="채현후"
                 items = {itemsList}
+                icon={false}
                 onClose={() => setOpen(false)}
               />
           </div>

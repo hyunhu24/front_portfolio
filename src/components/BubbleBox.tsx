@@ -89,11 +89,11 @@ const BubbleBox: React.FC<BubbleBoxProps> = ({
       height: '100%',
       minWidth: 120,
       borderRadius: 0,
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      justifyContent: 'center',
-      padding: '48px 0',
+      // display: 'flex',
+      // flexDirection: 'column',
+      // alignItems: 'center',
+      // justifyContent: 'center',
+      // padding: '48px 0',
     },
   };
 
