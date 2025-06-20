@@ -1,5 +1,7 @@
 import React from "react";
 import BubbleBox from "components/BubbleBox";
+import InformBox from "components/InformBox";
+
 
 const About : React.FC = () => {
 
@@ -30,8 +32,47 @@ const About : React.FC = () => {
                         안에 내용
                     </div>
                 </BubbleBox>
-                <div className="w-full h-[80%] flex items-center justify-center">
-
+                <div className="w-full h-[80%] flex gap-[100px] items-center justify-center p-[80px] border border-black">
+                    <div className="w-full h-full border border-black">
+                         <InformBox title="test" items={[
+                            {mainText:"test1", subText:"subText1", sub:"sub"},
+                            {mainText:"test1", subText:"subText1", sub:"sub"},
+                            // {mainText:"test1", subText:"subText1", sub:"sub"}
+                        ]}/>
+                    </div>
+                    <div className="w-full h-full">
+                        <InformBox title="test" pointColor="#F1605A" items={[
+                            {mainText:"test1", subText:"subText1", sub:"sub"},
+                            {mainText:"test1", subText:"subText1", sub:"sub"},
+                            // {mainText:"test1", subText:"subText1", sub:"sub"}
+                        ]}/>
+                         <InformBox title="test" pointColor="#52A668" items={[
+                            {mainText:"test1", subText:"subText1", sub:"sub"},
+                            {mainText:"test1", subText:"subText1", sub:"sub"},
+                            {mainText:"test1", subText:"subText1", sub:"sub"},
+                            {mainText:"test1", subText:"subText1", sub:"sub"},
+                            // {mainText:"test1", subText:"subText1", sub:"sub"}
+                        ]}/>
+                    </div>
+                    <div className="w-full h-full">
+                        <InformBox title="imgTest" pointColor="#F6C33B" imgItems={[
+                            {img: "Html"},
+                            {img: "Css"},
+                            {img: "Javascript"},
+                            {img: "Jquery"},
+                            {img: "ReactNative"},
+                            {img: "Java"},
+                            {img: "Sass"},
+                            {img: "Mysql"},
+                            {img: "Figma"},
+                            {img: "AdobePhotoshop"},
+                            {img: "AdobeIllustrator"},
+                            {img: "Github"},
+                            {img: "Slack"},
+                            {img: "Notion"},
+                            {img: "Tailwind"},
+                        ]} />
+                    </div>
                 </div>
             </div>
         </div>
