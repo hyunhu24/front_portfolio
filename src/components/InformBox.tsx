@@ -1,4 +1,5 @@
 import React from "react";
+import { twClasses, combineClasses } from "../styles/tailwindUtils";
 
 interface InformItem {
     mainText? : string;
@@ -24,14 +25,14 @@ const InformBox : React.FC<InformBoxProps> = ({
 }) => {
     return(
         <div>
-            <div className="text-[25px] font-black">{title}</div>
+            <div className="text-[30px] font-black">{title}</div>
             <div className="my-2" style={{backgroundColor : pointColor, width: '100%', height: '6px'}}></div>
             {items && <div className="flex-col gap-[10px]">
                 {items.map((item, idx) => (
-                    <div className="flex items-start gap-2" key={idx}>
+                    <div className={combineClasses(twClasses.flexItemStart, "gap-2")} key={idx}>
                         <div className="w-[10px] h-[10px] m-2 rounded-full" 
                         style={{backgroundColor: pointColor}}></div>
-                        <div className="flex-col gap-[2px] text-[18px]">
+                        <div className="flex-col gap-[2px] text-[18px] mb-1">
                             <div className="font-bold">{item.mainText}</div>
                             <div className="font-medium">
                                 {item.subText} 
@@ -42,10 +43,10 @@ const InformBox : React.FC<InformBoxProps> = ({
                 ))}
             </div>}
             {imgItems && 
-                <div className="flex justify-center w-full">
-                    <div className=" w-[340px] flex flex-wrap gap-[40px] items-center py-4"> 
+                <div className="w-full py-4">
+                    <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-5 xl:grid-cols-5 gap-4 sm:gap-6 md:gap-8 items-center justify-items-center"> 
                     {imgItems.map((item, idx) => (
-                        <div key={idx} className="w-[55px] h-[55px] flex items-center justify-center">
+                        <div key={idx} className="w-full max-w-24 min-w-16 flex items-center justify-center p-2">
                             <img src={`/assets/images/icon/${item.img}.png`} alt={`${item.img}`} 
                                 className="w-full h-auto object-contain"/>
                         </div>

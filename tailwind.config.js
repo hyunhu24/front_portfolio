@@ -41,6 +41,40 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    // function({ addUtilities }) {
+    //   const newUtilities = {
+    //     '.flex-col-between': {
+    //       'display': 'flex',
+    //       'flex-direction': 'column',
+    //       'justify-content': 'space-between',
+    //     },
+    //     '.flex-center': {
+    //       'display': 'flex',
+    //       'align-items': 'center',
+    //       'justify-content': 'center',
+    //     },
+    //     '.flex-between': {
+    //       'display': 'flex',
+    //       'align-items': 'center',
+    //       'justify-content': 'space-between',
+    //     },
+    //     '.absolute-center': {
+    //       'position': 'absolute',
+    //       'top': '50%',
+    //       'left': '50%',
+    //       'transform': 'translate(-50%, -50%)',
+    //     },
+    //     '.card-shadow': {
+    //       'box-shadow': '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
+    //       'transition': 'box-shadow 0.3s ease',
+    //     },
+    //     '.card-shadow:hover': {
+    //       'box-shadow': '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+    //     },
+    //   }
+    //   addUtilities(newUtilities)
+    // }
+  ],
 }
 

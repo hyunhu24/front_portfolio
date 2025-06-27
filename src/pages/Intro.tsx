@@ -36,7 +36,7 @@ const Intro: React.FC = () => {
     active: idx === selectedIndex,
     onClick: () => {
       setSelectedIndex(idx);
-      navigate(`/intro?item=${idx}`);
+      navigate(`/intro?item=2`);
     }
   }));
 
@@ -56,15 +56,17 @@ const Intro: React.FC = () => {
       <div className='h-full w-full flex items-center justify-center'>
         <div className="w-[50%] h-full flex items-center justify-center relative ">
 
+          <img src="/assets/images/intro/profile_intro.png" alt="intro_title" className="w-[fit] h-auto object-contain"/>
           <div className="absolute top-10 right-[50%] translate-x-[50%] flex gap-3 z-10">
             {colorDots.map((c, i) => (
               <div key={i} className={`w-4 h-4 rounded-full ${c}`}></div>
             ))}
           </div>
+
+          
           
         </div>
 
-      {/* 파란색 말풍선(BubbleBox) - 화면 맨 아래, 가로 100% */}
         <BubbleBox
           layout="vertical"
           color="#F1605A"
