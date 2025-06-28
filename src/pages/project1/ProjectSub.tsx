@@ -2,19 +2,24 @@ import React from "react";
 import BubbleBox from "components/BubbleBox";
 import InformBox from "components/InformBox";
 import { combineClasses, twClasses } from "styles/tailwindUtils";
+import BubbleBoxTitle from "components/BubbleBoxTitle";
+import SearchableListBox from "components/SearchableListBox";
 
 const ProjectSub : React.FC = () => {
+    const handleSearchClick = () => {
+        console.log("search");
+    }
     return(
         <div className="w-full h-full min-h-screen bg-background font-notosans">
             <div className="w-full h-full flex-col items-center justify-center">
                 <BubbleBox
                     layout="horizontal"
-                    color="#F1605A"
+                    color="#F6C33B"
                     tailDirection="bottom"
                     tailPosition={10}
                     position="center"
                     style={{
-                      background: '#F1605A',
+                      background: '#F6C33B',
                       boxShadow: '0 2px 16px rgba(0,0,0,0.07)',
                       borderTopLeftRadius: 0,
                       borderTopRightRadius: 0,
@@ -27,8 +32,21 @@ const ProjectSub : React.FC = () => {
                       padding: 0,
                     }}
                 >
-                    <div className="w-full flex flex-col gap-0.5">
-                        안에 내용
+                    <div className="w-full h-full flex items-center justify-end gap-0.5 pr-20">
+                        <BubbleBoxTitle title="Project 1" positionX="13%" positionY="3%" />
+                        <SearchableListBox 
+                            title={"프로젝트 보기"}
+                            items={[]}
+                            icon={true}
+                            showList={false}
+                            readOnly={true}
+                            onSearchClick={handleSearchClick}
+                            bgColor='#FBD462'
+                            // activeColor='#EA8268'
+                            width='400px'
+                            searchTextSize='20px'
+                            listTextSize='18px'
+                        />
                     </div>
                 </BubbleBox>
                 <div className="w-full h-[80%] flex gap-[100px] items-center justify-center p-[80px]">

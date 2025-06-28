@@ -22,24 +22,16 @@ const ProjectMain: React.FC = () => {
     <div className="w-full h-full min-h-screen bg-background font-notosans">
 
       <div className='h-full w-full flex items-center justify-center'>
-        <div className="w-[50%] h-full flex items-center justify-center relative ">
-
-          
-          <div className="absolute top-10 right-[50%] translate-x-[50%] flex gap-3 z-10">
-            {colorDots.map((c, i) => (
-              <div key={i} className={`w-4 h-4 rounded-full ${c}`}></div>
-            ))}
-          </div>
-        </div>
+        
 
         <BubbleBox
           layout="vertical"
-          color="#F1605A"
+          color="#F6C33B"
           tailDirection="right"
-          tailPosition={25}
+          tailPosition={60}
           position="left"
           style={{
-            background: '#F1605A',
+            background: '#F6C33B',
             boxShadow: '0 2px 16px rgba(0,0,0,0.07)',
             borderTopLeftRadius: 0,
             borderTopRightRadius: 0,
@@ -47,7 +39,7 @@ const ProjectMain: React.FC = () => {
             borderBottomRightRadius: 0,
             height: '100%',
             // minHeight: '430px',
-            width: '50%',
+            width: '40%',
             maxWidth: '50vw',
             padding: '50px 50px',
           }}
@@ -59,6 +51,16 @@ const ProjectMain: React.FC = () => {
             ))}
           </div>
         </BubbleBox>
+
+        <div className="w-[60%] h-full flex items-center justify-center relative ">
+
+          
+          <div className="absolute top-10 right-10 flex gap-3 z-10">
+            {colorDots.map((c, i) => (
+              <div key={i} className={`w-4 h-4 rounded-full ${c}`}></div>
+            ))}
+          </div>
+        </div>
       </div>
         {/* 페이지네이션 */}
           
