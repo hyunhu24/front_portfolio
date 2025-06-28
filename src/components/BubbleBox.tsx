@@ -137,7 +137,7 @@ const BubbleBox: React.FC<BubbleBoxProps> = ({
         }}
       />
       {/* 내용 */}
-      <div style={{ width: '100%', textAlign: 'center', fontSize: 32, fontWeight: 700, color: '#222', letterSpacing: 2 }}>
+      <div style={{ width: '100%',height: '100%', textAlign: 'center', fontSize: 32, fontWeight: 700, color: '#222', letterSpacing : 2 }}>
         {children}
       </div>
     </div>

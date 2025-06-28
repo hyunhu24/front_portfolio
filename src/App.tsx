@@ -86,11 +86,15 @@ import Intro from './pages/Intro';
 import { Routes, Route } from 'react-router-dom';
 import ScrollRouter from './ScrollRouter';
 import About from 'pages/About';
+import ProjectMain from 'pages/project1/ProjectMain';
+import ProjectSub from 'pages/project1/ProjectSub';
 
 const App: React.FC = () => {
   const mainRef = useRef<HTMLDivElement>(null);
   const introRef = useRef<HTMLDivElement>(null);
   const aboutRef = useRef<HTMLDivElement>(null);
+  const project1Ref = useRef<HTMLDivElement>(null);
+  const project1SubRef = useRef<HTMLDivElement>(null);
 
   return (
       <div className="w-full min-h-screen">
@@ -103,6 +107,9 @@ const App: React.FC = () => {
                   ref={mainRef}
                   style={{ height: '100vh', scrollSnapAlign: 'start' }}
                   tabIndex={0}
+                  onTouchStart={() => {
+                    console.log('touch start');
+                  }}
                 >
                   <Main />
                 </div>
@@ -132,6 +139,32 @@ const App: React.FC = () => {
                 </div>
               }
             />
+            <Route
+              path="/project1Main"
+              element={
+                <div
+                  ref={project1Ref}
+                  style={{ height: '100vh', scrollSnapAlign: 'start' }}
+                  tabIndex={0}
+                >
+                  <ProjectMain />
+                </div>
+              }
+            />
+            <Route
+              path="/project1Sub"
+              element={
+                <div
+                  ref={project1SubRef}
+                  style={{ height: '100vh', scrollSnapAlign: 'start' }}
+                  tabIndex={0}
+                >
+                  <ProjectSub />
+                </div>
+              }
+            />
+            
+
           </Routes>
         </ScrollRouter>
       </div>

@@ -15,6 +15,8 @@ interface SearchableListBoxProps {
   onBlur?: () => void; 
   icon?: boolean;
   IconName?: IconType;
+  readOnly?: boolean;
+  onSearchClick?: () => void;
   bgColor?: string;
   activeColor?: string;
   width?: string;
@@ -30,6 +32,8 @@ const SearchableListBox: React.FC<SearchableListBoxProps> = ({
   showList = true,
   onFocus,
   onBlur,
+  readOnly = false,
+  onSearchClick,
   icon = true,
   IconName,
   bgColor = '#8BB0EF',
@@ -69,6 +73,8 @@ const SearchableListBox: React.FC<SearchableListBoxProps> = ({
             value={search}
             onFocus={onFocus}
             onBlur={onBlur}
+            readOnly={readOnly}
+            // onClick={onSearchClick}
             onChange={e => setSearch(e.target.value)}
             placeholder={title}
             className={`w-full py-2 bg-transparent text-white focus:outline-none placeholder:text-white ${icon ? 'pl-5 pr-14' : 'px-3'}`}
@@ -80,7 +86,7 @@ const SearchableListBox: React.FC<SearchableListBoxProps> = ({
             }}
           />
           <button 
-            onClick={() => setSearch('')} 
+            onClick={readOnly ? onSearchClick : () => setSearch('')} 
             className="ml-auto text-black/60 hover:text-black text-lg absolute right-6 top-1/2 -translate-y-1/2 z-10"
           >
             {icon ? <IoIosSearch size={22} color='white' fontWeight={800}/> : '✕'}

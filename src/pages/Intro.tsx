@@ -56,7 +56,7 @@ const Intro: React.FC = () => {
       <div className='h-full w-full flex items-center justify-center'>
         <div className="w-[50%] h-full flex items-center justify-center relative ">
 
-          <img src="/assets/images/intro/profile_intro.png" alt="intro_title" className="w-[fit] h-auto object-contain"/>
+          <img src="/assets/images/intro/profile_intro.png" alt="intro_title" className="w-[100%] h-auto object-contain"/>
           <div className="absolute top-10 right-[50%] translate-x-[50%] flex gap-3 z-10">
             {colorDots.map((c, i) => (
               <div key={i} className={`w-4 h-4 rounded-full ${c}`}></div>
@@ -87,7 +87,7 @@ const Intro: React.FC = () => {
             padding: '50px 50px',
           }}
         >
-          <div className="w-full h-full flex flex-col gap-[60px] justify-center items-center">
+          <div className="w-full h-full flex flex-col gap-[60px] justify-start items-center">
           <SearchableListBox 
             title={selectedItem.label}
             items={introItems}

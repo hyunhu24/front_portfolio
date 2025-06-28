@@ -2,9 +2,18 @@ import React from "react";
 import BubbleBox from "components/BubbleBox";
 import InformBox from "components/InformBox";
 import { combineClasses, twClasses } from "styles/tailwindUtils";
+import SearchableListBox from "components/SearchableListBox";
+import { useNavigate } from "react-router-dom";
+import BubbleBoxTitle from "components/BubbleBoxTitle";
 
 
 const About : React.FC = () => {
+    const navigate = useNavigate();
+
+    const handleSearchClick = () => {
+        // 검색 버튼 클릭 시 다른 페이지로 이동
+        navigate('/project1Main');
+    };
 
     return(
         <div className="w-full h-full min-h-screen bg-background font-notosans">
@@ -29,8 +38,21 @@ const About : React.FC = () => {
                       padding: 0,
                     }}
                 >
-                    <div className="w-full flex flex-col gap-0.5">
-                        안에 내용
+                    <div className="w-full h-full flex items-center justify-end gap-0.5 pr-20">
+                        <BubbleBoxTitle title="Project 1" positionX="13%" positionY="3%" />
+                        <SearchableListBox 
+                            title={"프로젝트 보기"}
+                            items={[]}
+                            icon={true}
+                            showList={false}
+                            readOnly={true}
+                            onSearchClick={handleSearchClick}
+                            bgColor='#EF9F8B'
+                            activeColor='#EA8268'
+                            width='400px'
+                            searchTextSize='20px'
+                            listTextSize='18px'
+                        />
                     </div>
                 </BubbleBox>
                 <div className="w-full h-[80%] flex gap-[100px] items-center justify-center p-[80px]">

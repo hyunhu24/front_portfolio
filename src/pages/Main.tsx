@@ -95,7 +95,7 @@ const Main: React.FC = () => {
             padding: 0,
           }}
         >
-          <div className="w-full h-[100%] flex gap-0.5 pt-8 items-center justify-center">
+          <div className="w-full h-[100%] flex gap-0.5 pt-8 items-start justify-center">
               <SearchableListBox
                 title="채현후"
                 items = {itemsList}

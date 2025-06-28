@@ -72,10 +72,14 @@ const ScrollRouter: React.FC<{ children: React.ReactNode }> = ({ children }) => 
     if (direction === 'down') {
       if (location.pathname === '/') navigate('/intro');
       else if (location.pathname === '/intro') navigate('/about');
-    } else {
+      else if (location.pathname === '/about') navigate('/project1Main');
+      else if (location.pathname === '/project1Main') navigate('/project1Sub');
+    } else if (direction === 'up') {
       if (location.pathname === '/intro') navigate('/');
       else if (location.pathname === '/about') navigate('/intro');
-    }
+      else if (location.pathname === '/project1Main') navigate('/about');
+      else if (location.pathname === '/project1Sub') navigate('/project1Main');
+    } 
 
     setTimeout(() => { isScrolling.current = false; }, 200);
   };
