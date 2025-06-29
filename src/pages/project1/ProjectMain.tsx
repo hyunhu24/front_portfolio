@@ -3,6 +3,7 @@ import BubbleBox from 'components/BubbleBox';
 import SearchableListBox from 'components/SearchableListBox';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useItems } from 'context/ItemContext';
+import ProjectMainTitleBox from 'components/ProjectMainTitleBox';
 
 const colorDots = [
   'bg-primaryred',
@@ -22,8 +23,6 @@ const ProjectMain: React.FC = () => {
     <div className="w-full h-full min-h-screen bg-background font-notosans">
 
       <div className='h-full w-full flex items-center justify-center'>
-        
-
         <BubbleBox
           layout="vertical"
           color="#F6C33B"
@@ -44,6 +43,15 @@ const ProjectMain: React.FC = () => {
             padding: '50px 50px',
           }}
         >
+          <div className='flex items-center justify-center w-full h-full text-left text-white text-[100px] font-skranji font-[400]'>
+            <div className='w-fit'>
+              <span className='text-primaryred'>0</span>1
+              <br/>
+              MIRU
+              <br/>
+              Project
+            </div>
+          </div>
           
           <div className="absolute left-[50%] translate-x-[-50%] bottom-10 flex gap-3">
             {paginationDots.map(i => (
@@ -59,6 +67,26 @@ const ProjectMain: React.FC = () => {
             {colorDots.map((c, i) => (
               <div key={i} className={`w-4 h-4 rounded-full ${c}`}></div>
             ))}
+            <ProjectMainTitleBox navigateUrl={"/project1Sub"} pointColor="#F6C33B" titleItems={[
+              {
+                mainText: "Project",
+                subText: "Project 1",
+                
+              },
+              {
+                mainText: "Project",
+                subText: "Project 1",
+                
+              },
+              {
+                mainText: "Project",
+                linkUrl: "https://www.google.com"
+              },
+              {
+                navigateText: "개발 주요 내용 보러가기"
+              }
+              
+            ]} />
           </div>
         </div>
       </div>
