@@ -60,7 +60,7 @@ const ProjectMain: React.FC = () => {
           </div>
         </BubbleBox>
 
-        <div className="w-[60%] h-full flex items-center justify-center relative ">
+        <div className="w-[60%] h-full flex flex-col items-center justify-center relative ">
 
           
           <div className="absolute top-10 right-10 flex gap-3 z-10">
@@ -68,7 +68,10 @@ const ProjectMain: React.FC = () => {
               <div key={i} className={`w-4 h-4 rounded-full ${c}`}></div>
             ))}
           </div>
-          <div className="w-full h-full flex items-end justify-center pb-[30px]">
+          <div className="w-full h-full flex items-center justify-center">
+            <img src='/assets/images/project/miru/miru-main.png' alt="profile" className="absolute top-[38px] w-[90%] h-auto object-contain"/>
+          </div>
+          <div className="w-full h-full flex items-start justify-center pt-[100px]">
             <ProjectMainTitleBox navigateUrl={"/project1Sub"} pointColor="#F6C33B" titleItems={[
                 {
                   mainText: "프로젝트명",

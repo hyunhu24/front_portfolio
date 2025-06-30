@@ -23,7 +23,7 @@ const ProjectMainTitleBox: React.FC<ProjectMainTitleBoxProps> = ({ titleItems, n
     }
 
     return (
-        <div className="flex flex-col gap-4 w-full pl-[60px]">
+        <div className="flex flex-col gap-4 w-full pl-[80px]">
             {titleItems.map((item, index) => (
                 <div key={index} className="">
                     {item.mainText && 
