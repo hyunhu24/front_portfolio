@@ -57,13 +57,17 @@ const About : React.FC = () => {
                 </BubbleBox>
                 <div className="w-full h-[80%] flex gap-[100px] items-center justify-center p-[80px]">
                     <div className={combineClasses(twClasses.flexColBetween, "h-full w-full")}>
-                        <img src='/assets/images/about/profile_about.png' alt="profile" className="w-[230px] h-auto object-contain"/>
-                         <InformBox title="개인정보" items={[
-                            {mainText:"Phone", subText:"010.8673.7686"},
-                            {mainText:"Email", subText:"gusgn24@gmail.com"},
-                            {mainText:"Github", subText:"https://github.com/hyunhu24"},
-                            {mainText:"Blog", subText:"https://hoostudy.tistory.com"}
-                        ]}/>
+                        <div className="w-[100%] h-[50%] flex items-start justify-start pl-10">
+                            <img src='/assets/images/about/profile_about.png' alt="profile" className="w-[230px] h-auto object-contain"/>
+                        </div>
+                        <div className="w-[100%] h-[50%] flex items-start justify-center">
+                            <InformBox title="개인정보" items={[
+                                {mainText:"Phone", subText:"010.8673.7686"},
+                                {mainText:"Email", subText:"gusgn24@gmail.com"},
+                                {mainText:"Github", subText:"https://github.com/hyunhu24"},
+                                {mainText:"Blog", subText:"https://hoostudy.tistory.com"}
+                            ]}/>
+                        </div>
                     </div>
                     <div className={combineClasses(twClasses.flexColBetween, "h-full w-full")}>
                         <InformBox title="경력" pointColor="#F1605A" items={[

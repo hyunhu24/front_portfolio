@@ -23,14 +23,14 @@ const ProjectMainTitleBox: React.FC<ProjectMainTitleBoxProps> = ({ titleItems, n
     }
 
     return (
-        <div className="flex flex-col gap-4 w-full">
+        <div className="flex flex-col gap-4 w-full pl-[60px]">
             {titleItems.map((item, index) => (
                 <div key={index} className="">
                     {item.mainText && 
                     <div className="flex flex-col gap-4">
                         {/* bold 처리 해야 함 */}
                         <div className="w-fit text-[30px]"> 
-                            <span className="text-[800]">{item.mainText} : </span>
+                            <span className="font-bold">{item.mainText} : </span>
                             {item.subText && <span className="">{item.subText}</span>}
                             {item.linkUrl && <a href={item.linkUrl} target="_blank" rel="noreferrer">{item.linkUrl}</a>}
                         </div>
@@ -38,8 +38,8 @@ const ProjectMainTitleBox: React.FC<ProjectMainTitleBoxProps> = ({ titleItems, n
                     }
 
                     {item.navigateText && <div
-                        className="text-[25px] font-medium underline" 
-                        style={{textDecorationColor: pointColor}} 
+                        className="w-fit text-[25px] font-medium underline mt-[30px]" 
+                        style={{textDecorationColor: pointColor, cursor: "pointer"}} 
                         onClick={() => navigateTo(navigateUrl)}>{item.navigateText}</div>}
                 </div>
             ))}

@@ -67,27 +67,34 @@ const ProjectMain: React.FC = () => {
             {colorDots.map((c, i) => (
               <div key={i} className={`w-4 h-4 rounded-full ${c}`}></div>
             ))}
-            <ProjectMainTitleBox navigateUrl={"/project1Sub"} pointColor="#F6C33B" titleItems={[
-              {
-                mainText: "Project",
-                subText: "Project 1",
-                
-              },
-              {
-                mainText: "Project",
-                subText: "Project 1",
-                
-              },
-              {
-                mainText: "Project",
-                linkUrl: "https://www.google.com"
-              },
-              {
-                navigateText: "개발 주요 내용 보러가기"
-              }
-              
-            ]} />
           </div>
+          <div className="w-full h-full flex items-end justify-center pb-[30px]">
+            <ProjectMainTitleBox navigateUrl={"/project1Sub"} pointColor="#F6C33B" titleItems={[
+                {
+                  mainText: "프로젝트명",
+                  subText: "MIRU",
+                },
+                {
+                  mainText: "기여도",
+                  subText: "70%",
+                },
+                {
+                  mainText: "사용기술",
+                  subText: "React, JS, CSS, Html5, Webpack, Babel, Git",
+                },
+                {
+                  mainText: "프로젝트 기간",
+                  subText: "2024.05.10 ~ 2024.06.17",
+                },
+                {
+                  mainText: "배포 URL",
+                  linkUrl: "https://miruworld.xyz/"
+                },
+                {
+                  navigateText: "개발 주요 내용 보러가기"
+                }
+              ]} />
+            </div>
         </div>
       </div>
         {/* 페이지네이션 */}

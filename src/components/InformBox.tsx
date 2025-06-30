@@ -24,7 +24,7 @@ const InformBox : React.FC<InformBoxProps> = ({
     imgItems
 }) => {
     return(
-        <div>
+        <div className="w-full h-full">
             <div className="text-[30px] font-black">{title}</div>
             <div className="my-2" style={{backgroundColor : pointColor, width: '100%', height: '6px'}}></div>
             {items && <div className="flex-col gap-[10px]">
