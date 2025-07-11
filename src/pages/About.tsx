@@ -3,20 +3,23 @@ import BubbleBox from "components/BubbleBox";
 import InformBox from "components/InformBox";
 import { combineClasses, twClasses } from "styles/tailwindUtils";
 import SearchableListBox from "components/SearchableListBox";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import BubbleBoxTitle from "components/BubbleBoxTitle";
 
 
 const About : React.FC = () => {
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
 
     const handleSearchClick = () => {
-        // 검색 버튼 클릭 시 다른 페이지로 이동
-        navigate('/project1Main');
+        // 프로젝트 페이지로 스크롤 이동
+        const element = document.getElementById('project-main');
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
     };
 
     return(
-        <div className="w-full h-full min-h-screen bg-background font-notosans">
+        <div id="about" className="w-full h-screen bg-background font-notosans snap-center">
             <div className="w-full h-full flex-col items-center justify-center">
                 <BubbleBox
                     layout="horizontal"
@@ -39,7 +42,7 @@ const About : React.FC = () => {
                     }}
                 >
                     <div className="w-full h-full flex items-center justify-end gap-0.5 pr-20">
-                        <BubbleBoxTitle title="Project 1" positionX="13%" positionY="3%" />
+                        <BubbleBoxTitle title="Project 1" positionX="13%" positionY="3%" fontFamily="font-skranji" />
                         <SearchableListBox 
                             title={"프로젝트 보기"}
                             items={[]}

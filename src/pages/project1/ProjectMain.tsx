@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import BubbleBox from 'components/BubbleBox';
 import SearchableListBox from 'components/SearchableListBox';
-import { useLocation, useNavigate } from 'react-router-dom';
+// import { useLocation, useNavigate } from 'react-router-dom';
 import { useItems } from 'context/ItemContext';
 import ProjectMainTitleBox from 'components/ProjectMainTitleBox';
 
@@ -17,10 +17,16 @@ const colorDots = [
 const paginationDots = [0, 1, 2, 3, 4, 5];
 
 const ProjectMain: React.FC = () => {
- 
+  const navigateTo = (url: string) => {
+    // 스크롤로 해당 섹션으로 이동하는 로직
+    const element = document.getElementById('project-sub');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
-    <div className="w-full h-full min-h-screen bg-background font-notosans">
+    <div id="project-main" className="w-full h-screen bg-background font-notosans snap-center">
 
       <div className='h-full w-full flex items-center justify-center'>
         <BubbleBox
@@ -72,7 +78,11 @@ const ProjectMain: React.FC = () => {
             <img src='/assets/images/project/miru/miru-main.png' alt="profile" className="absolute top-[38px] w-[90%] h-auto object-contain"/>
           </div>
           <div className="w-full h-full flex items-start justify-center pt-[100px]">
-            <ProjectMainTitleBox navigateUrl={"/project1Sub"} pointColor="#F6C33B" titleItems={[
+            <ProjectMainTitleBox 
+              navigateUrl={"/project1Sub"} 
+              pointColor="#F6C33B" 
+              navigateTo={navigateTo}
+              titleItems={[
                 {
                   mainText: "프로젝트명",
                   subText: "MIRU",

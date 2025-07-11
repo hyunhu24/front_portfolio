@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 import BubbleBox from '../components/BubbleBox';
 import SearchableListBox from '../components/SearchableListBox';
+import { useItems } from 'context/ItemContext';
 
 const colorDots = [
   'bg-primaryblue',
@@ -17,28 +18,47 @@ const paginationDots = [0, 1, 2, 3, 4, 5];
 const Main: React.FC = () => {
 
   const [open, setOpen] = useState(true);
-  const navigate = useNavigate();
+  const { setSelectedIndex } = useItems();
+  // const navigate = useNavigate();
 
   const itemsList = [
     {
       label: '성장과 도전을 멈추지 않는 개발자 채현후',
       active: false,
-      onClick: () => navigate('/intro?item=0'),
+      onClick: () => {
+        setSelectedIndex(0);
+        const element = document.getElementById('intro');
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      },
     },
     {
       label: 'UI와 UX를 고민하는 프론트 개발자 채현후',
       active: true,
-      onClick: () => navigate('/intro?item=1'),
+      onClick: () => {
+        setSelectedIndex(1);
+        const element = document.getElementById('intro');
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      },
     },
     {
       label: '새로운 도전을 통해 성장하는 프론트 개발자 채현후',
       active: false,
-      onClick: () => navigate('/intro?item=2'),
+      onClick: () => {
+        setSelectedIndex(2);
+        const element = document.getElementById('intro');
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      },
     },
   ];
 
   return (
-    <div className="w-full h-full min-h-screen bg-background font-notosans relative ">
+    <div id="main" className="w-full h-[100vh] min-h-screen bg-background font-notosans relative snap-center">
       {/* 오른쪽 상단 컬러 점 */}
       <div className="absolute top-10 right-16 flex gap-3 z-10">
         {colorDots.map((c, i) => (

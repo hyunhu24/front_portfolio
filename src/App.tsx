@@ -1,3 +1,37 @@
+import React from 'react';
+import './styles/App.css';
+import Main from './pages/Main';
+import Intro from './pages/Intro';
+import About from 'pages/About';
+import ProjectMain from 'pages/project1/ProjectMain';
+import ProjectSub from 'pages/project1/ProjectSub';
+
+const App: React.FC = () => {
+
+  return (
+      <div className="w-full h-screen overflow-y-auto snap-y snap-mandatory">
+         <div className="snap-start h-screen">
+           <Main />
+         </div>
+         <div className="snap-start h-screen">
+           <Intro />
+         </div>
+         <div className="snap-start h-screen">
+           <About />
+         </div>
+         <div className="snap-start h-screen">
+           <ProjectMain />
+         </div>
+         <div className="snap-start h-screen">
+           <ProjectSub />
+         </div>
+      </div>
+  );
+};
+
+export default App;
+
+
 //1번
 
 // import React, { useRef } from 'react';
@@ -80,98 +114,98 @@
 
 //2번
 
-import React, { useRef } from 'react';
-import Main from './pages/Main';
-import Intro from './pages/Intro';
-import { Routes, Route } from 'react-router-dom';
-import ScrollRouter from './ScrollRouter';
-import About from 'pages/About';
-import ProjectMain from 'pages/project1/ProjectMain';
-import ProjectSub from 'pages/project1/ProjectSub';
+// import React, { useRef } from 'react';
+// import Main from './pages/Main';
+// import Intro from './pages/Intro';
+// import { Routes, Route } from 'react-router-dom';
+// import ScrollRouter from './ScrollRouter';
+// import About from 'pages/About';
+// import ProjectMain from 'pages/project1/ProjectMain';
+// import ProjectSub from 'pages/project1/ProjectSub';
 
-const App: React.FC = () => {
-  const mainRef = useRef<HTMLDivElement>(null);
-  const introRef = useRef<HTMLDivElement>(null);
-  const aboutRef = useRef<HTMLDivElement>(null);
-  const project1Ref = useRef<HTMLDivElement>(null);
-  const project1SubRef = useRef<HTMLDivElement>(null);
+// const App: React.FC = () => {
+//   const mainRef = useRef<HTMLDivElement>(null);
+//   const introRef = useRef<HTMLDivElement>(null);
+//   const aboutRef = useRef<HTMLDivElement>(null);
+//   const project1Ref = useRef<HTMLDivElement>(null);
+//   const project1SubRef = useRef<HTMLDivElement>(null);
 
-  return (
-      <div className="w-full min-h-screen">
-        <ScrollRouter>
-          <Routes>
-            <Route
-              path="/"
-              element={
-                <div
-                  ref={mainRef}
-                  style={{ height: '100vh', scrollSnapAlign: 'start' }}
-                  tabIndex={0}
-                  onTouchStart={() => {
-                    console.log('touch start');
-                  }}
-                >
-                  <Main />
-                </div>
-              }
-            />
-            <Route
-              path="/intro"
-              element={
-                <div
-                  ref={introRef}
-                  style={{ height: '100vh', scrollSnapAlign: 'start' }}
-                  tabIndex={0}
-                >
-                  <Intro />
-                </div>
-              }
-            />
-            <Route
-              path="/about"
-              element={
-                <div
-                  ref={aboutRef}
-                  style={{ height: '100vh', scrollSnapAlign: 'start' }}
-                  tabIndex={0}
-                >
-                  <About />
-                </div>
-              }
-            />
-            <Route
-              path="/project1Main"
-              element={
-                <div
-                  ref={project1Ref}
-                  style={{ height: '100vh', scrollSnapAlign: 'start' }}
-                  tabIndex={0}
-                >
-                  <ProjectMain />
-                </div>
-              }
-            />
-            <Route
-              path="/project1Sub"
-              element={
-                <div
-                  ref={project1SubRef}
-                  style={{ height: '100vh', scrollSnapAlign: 'start' }}
-                  tabIndex={0}
-                >
-                  <ProjectSub />
-                </div>
-              }
-            />
+//   return (
+//       <div className="w-full min-h-screen">
+//         <ScrollRouter>
+//           <Routes>
+//             <Route
+//               path="/"
+//               element={
+//                 <div
+//                   ref={mainRef}
+//                   style={{ height: '100vh', scrollSnapAlign: 'start' }}
+//                   tabIndex={0}
+//                   onTouchStart={() => {
+//                     console.log('touch start');
+//                   }}
+//                 >
+//                   <Main />
+//                 </div>
+//               }
+//             />
+//             <Route
+//               path="/intro"
+//               element={
+//                 <div
+//                   ref={introRef}
+//                   style={{ height: '100vh', scrollSnapAlign: 'start' }}
+//                   tabIndex={0}
+//                 >
+//                   <Intro />
+//                 </div>
+//               }
+//             />
+//             <Route
+//               path="/about"
+//               element={
+//                 <div
+//                   ref={aboutRef}
+//                   style={{ height: '100vh', scrollSnapAlign: 'start' }}
+//                   tabIndex={0}
+//                 >
+//                   <About />
+//                 </div>
+//               }
+//             />
+//             <Route
+//               path="/project1Main"
+//               element={
+//                 <div
+//                   ref={project1Ref}
+//                   style={{ height: '100vh', scrollSnapAlign: 'start' }}
+//                   tabIndex={0}
+//                 >
+//                   <ProjectMain />
+//                 </div>
+//               }
+//             />
+//             <Route
+//               path="/project1Sub"
+//               element={
+//                 <div
+//                   ref={project1SubRef}
+//                   style={{ height: '100vh', scrollSnapAlign: 'start' }}
+//                   tabIndex={0}
+//                 >
+//                   <ProjectSub />
+//                 </div>
+//               }
+//             />
             
 
-          </Routes>
-        </ScrollRouter>
-      </div>
-  );
-};
+//           </Routes>
+//         </ScrollRouter>
+//       </div>
+//   );
+// };
 
-export default App;
+// export default App;
 
 //3번
 

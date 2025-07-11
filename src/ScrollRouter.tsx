@@ -53,72 +53,72 @@
 
 // export default ScrollRouter;
 
-import { useNavigate, useLocation } from 'react-router-dom';
-import React, { useRef, useEffect } from 'react';
-import './styles/App.css';
-import Main from './pages/Main';
-import Intro from './pages/Intro';
+// import { useNavigate, useLocation } from 'react-router-dom';
+// import React, { useRef, useEffect } from 'react';
+// import './styles/App.css';
+// import Main from './pages/Main';
+// import Intro from './pages/Intro';
 
-const ScrollRouter: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const navigate = useNavigate();
-  const location = useLocation();
-  const isScrolling = useRef(false);
-  let touchStartY = useRef(0);
+// const ScrollRouter: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+//   const navigate = useNavigate();
+//   const location = useLocation();
+//   const isScrolling = useRef(false);
+//   let touchStartY = useRef(0);
 
-  const handleScroll = (direction: 'up' | 'down') => {
-    if (isScrolling.current) return;
-    isScrolling.current = true;
+//   const handleScroll = (direction: 'up' | 'down') => {
+//     if (isScrolling.current) return;
+//     isScrolling.current = true;
 
-    if (direction === 'down') {
-      if (location.pathname === '/') navigate('/intro');
-      else if (location.pathname === '/intro') navigate('/about');
-      else if (location.pathname === '/about') navigate('/project1Main');
-      else if (location.pathname === '/project1Main') navigate('/project1Sub');
-    } else if (direction === 'up') {
-      if (location.pathname === '/intro') navigate('/');
-      else if (location.pathname === '/about') navigate('/intro');
-      else if (location.pathname === '/project1Main') navigate('/about');
-      else if (location.pathname === '/project1Sub') navigate('/project1Main');
-    } 
+//     if (direction === 'down') {
+//       if (location.pathname === '/') navigate('/intro');
+//       else if (location.pathname === '/intro') navigate('/about');
+//       else if (location.pathname === '/about') navigate('/project1Main');
+//       else if (location.pathname === '/project1Main') navigate('/project1Sub');
+//     } else if (direction === 'up') {
+//       if (location.pathname === '/intro') navigate('/');
+//       else if (location.pathname === '/about') navigate('/intro');
+//       else if (location.pathname === '/project1Main') navigate('/about');
+//       else if (location.pathname === '/project1Sub') navigate('/project1Main');
+//     } 
 
-    setTimeout(() => { isScrolling.current = false; }, 200);
-  };
+//     setTimeout(() => { isScrolling.current = false; }, 200);
+//   };
 
-  const onWheel = (e: React.WheelEvent) => {
-    e.preventDefault(); // 기본 스크롤 동작 방지
-    if (e.deltaY > 0) handleScroll('down');
-    else if (e.deltaY < 0) handleScroll('up');
-  };
+//   const onWheel = (e: React.WheelEvent) => {
+//     e.preventDefault(); // 기본 스크롤 동작 방지
+//     if (e.deltaY > 0) handleScroll('down');
+//     else if (e.deltaY < 0) handleScroll('up');
+//   };
 
-  const onTouchStart = (e: React.TouchEvent) => {
-    touchStartY.current = e.touches[0].clientY;
-  };
+//   const onTouchStart = (e: React.TouchEvent) => {
+//     touchStartY.current = e.touches[0].clientY;
+//   };
 
-  const onTouchEnd = (e: React.TouchEvent) => {
-    const touchEndY = e.changedTouches[0].clientY;
-    if (touchStartY.current - touchEndY > 50) handleScroll('down');
-    else if (touchEndY - touchStartY.current > 50) handleScroll('up');
-  };
+//   const onTouchEnd = (e: React.TouchEvent) => {
+//     const touchEndY = e.changedTouches[0].clientY;
+//     if (touchStartY.current - touchEndY > 50) handleScroll('down');
+//     else if (touchEndY - touchStartY.current > 50) handleScroll('up');
+//   };
 
-  // 스크롤 이벤트 방지
-  useEffect(() => {
-    const preventDefault = (e: Event) => e.preventDefault();
-    document.addEventListener('wheel', preventDefault, { passive: false });
-    return () => document.removeEventListener('wheel', preventDefault);
-  }, []);
+//   // 스크롤 이벤트 방지
+//   useEffect(() => {
+//     const preventDefault = (e: Event) => e.preventDefault();
+//     document.addEventListener('wheel', preventDefault, { passive: false });
+//     return () => document.removeEventListener('wheel', preventDefault);
+//   }, []);
 
-  return (
-    <div
-      className="w-full h-screen overflow-hidden"
-      tabIndex={-1}
-      onWheel={onWheel}
-      onTouchStart={onTouchStart}
-      onTouchEnd={onTouchEnd}
-      style={{ scrollSnapType: 'y mandatory', outline: 'none' }}
-    >
-      {children}
-    </div>
-  );
-};
+//   return (
+//     <div
+//       className="w-full h-screen overflow-hidden"
+//       tabIndex={-1}
+//       onWheel={onWheel}
+//       onTouchStart={onTouchStart}
+//       onTouchEnd={onTouchEnd}
+//       style={{ scrollSnapType: 'y mandatory', outline: 'none' }}
+//     >
+//       {children}
+//     </div>
+//   );
+// };
 
-export default ScrollRouter;
+// export default ScrollRouter;

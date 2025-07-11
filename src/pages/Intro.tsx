@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import BubbleBox from '../components/BubbleBox';
 import SearchableListBox from 'components/SearchableListBox';
-import { useLocation, useNavigate } from 'react-router-dom';
+// import { useLocation, useNavigate } from 'react-router-dom';
 import { useItems } from 'context/ItemContext';
 
 const colorDots = [
@@ -18,25 +18,25 @@ const paginationDots = [0, 1, 2, 3, 4, 5];
 const Intro: React.FC = () => {
   const [isListVisible, setIsListVisible] = useState(false);
   const { selectedIndex, setSelectedIndex, items, selectedItem } = useItems();
-  const navigate = useNavigate();
-  const location = useLocation();
+  // const navigate = useNavigate();
+  // const location = useLocation();
 
   console.log(selectedItem, items, selectedItem);
 
-  useEffect(() => {
-    const params = new URLSearchParams(location.search);
-    const idx = parseInt(params.get('item') ?? '1', 10);
-    if (!isNaN(idx) && idx >= 0 && idx < items.length) {
-      setSelectedIndex(idx);
-    }
-  }, [location, setSelectedIndex, items.length]);
+  // useEffect(() => {
+  //   const params = new URLSearchParams(location.search);
+  //   const idx = parseInt(params.get('item') ?? '1', 10);
+  //   if (!isNaN(idx) && idx >= 0 && idx < items.length) {
+  //     setSelectedIndex(idx);
+  //   }
+  // }, [location, setSelectedIndex, items.length]);
 
   const introItems = items.map((item, idx) => ({
     ...item,
     active: idx === selectedIndex,
     onClick: () => {
       setSelectedIndex(idx);
-      navigate(`/intro?item=2`);
+      // navigate(`/intro?item=2`);
     }
   }));
 
@@ -49,7 +49,7 @@ const Intro: React.FC = () => {
   };
 
   return (
-    <div className="w-full h-full min-h-screen bg-background font-notosans">
+    <div id="intro" className="w-full h-screen bg-background font-notosans snap-center overflow-hidden">
       {/* 오른쪽 상단 컬러 점 */}
      
       {/* 중앙 컬러풀 타이틀 */}
@@ -62,9 +62,6 @@ const Intro: React.FC = () => {
               <div key={i} className={`w-4 h-4 rounded-full ${c}`}></div>
             ))}
           </div>
-
-          
-          
         </div>
 
         <BubbleBox

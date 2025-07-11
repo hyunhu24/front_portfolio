@@ -10,7 +10,7 @@ const ProjectSub : React.FC = () => {
         console.log("search");
     }
     return(
-        <div className="w-full h-full min-h-screen bg-background font-notosans">
+        <div id="project-sub" className="w-full h-screen bg-background font-notosans snap-center">
             <div className="w-full h-full flex-col items-center justify-center">
                 <BubbleBox
                     layout="horizontal"
@@ -33,7 +33,7 @@ const ProjectSub : React.FC = () => {
                     }}
                 >
                     <div className="w-full h-full flex items-center justify-end gap-0.5 pr-20">
-                        <BubbleBoxTitle title="Project 1" positionX="13%" positionY="3%" />
+                        <BubbleBoxTitle title="개발 주요 내용" positionX="13%" positionY="3%" />
                         <SearchableListBox 
                             title={"프로젝트 보기"}
                             items={[]}
@@ -50,7 +50,11 @@ const ProjectSub : React.FC = () => {
                     </div>
                 </BubbleBox>
                 <div className="w-full h-[80%] flex gap-[100px] items-center justify-center p-[80px]">
-                    
+                     <div className="border-2 border-red-500 w-[100%] h-[100%] flex flex-row gap-10">
+                        <div className="w-[100%] h-[100%] bg-primaryred"></div>
+                        <div className="w-[100%] h-[100%] bg-primarygreen"></div>
+                        <div className="w-[100%] h-[100%] bg-primaryblue"></div>
+                     </div>
                 </div>
             </div>
         </div>

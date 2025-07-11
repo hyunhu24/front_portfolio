@@ -1,5 +1,4 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
 
 interface TitleItem{
     mainText? : string;
@@ -12,16 +11,10 @@ interface ProjectMainTitleBoxProps {
     titleItems: TitleItem[];
     navigateUrl: string;
     pointColor: string;
-    // navigateTo?: (url: string) => void;
+    navigateTo: (url: string) => void;
 }
 
-const ProjectMainTitleBox: React.FC<ProjectMainTitleBoxProps> = ({ titleItems, navigateUrl, pointColor }) => {
-    const navigate = useNavigate();
-
-    const navigateTo = (url: string) => {
-        navigate(url);
-    }
-
+const ProjectMainTitleBox: React.FC<ProjectMainTitleBoxProps> = ({ titleItems, navigateUrl, pointColor, navigateTo }) => {
     return (
         <div className="flex flex-col gap-4 w-full pl-[80px]">
             {titleItems.map((item, index) => (
