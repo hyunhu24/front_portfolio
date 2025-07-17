@@ -5,6 +5,8 @@ import Intro from './pages/Intro';
 import About from 'pages/About';
 import ProjectMain from 'pages/project1/ProjectMain';
 import ProjectSub from 'pages/project1/ProjectSub';
+import ProjectSkill from 'pages/project1/ProjectSkill';
+import ProjectTroubleShooting from 'pages/project1/ProjectTroubleShooting';
 
 const App: React.FC = () => {
 
@@ -24,6 +26,12 @@ const App: React.FC = () => {
          </div>
          <div className="snap-start h-screen">
            <ProjectSub />
+         </div>
+         <div className="snap-start h-screen">
+           <ProjectSkill />
+         </div>
+         <div className="snap-start h-screen">
+           <ProjectTroubleShooting />
          </div>
       </div>
   );
