@@ -2,17 +2,18 @@ import React from 'react'
 
 interface PointTextProps {
     pointColor?: string;
+    responseText?: string;
     responsiveText?: boolean;
     text?: string;
 }
 
-const PointText: React.FC<PointTextProps>  = ({ pointColor, responsiveText = false, text }) => {
+const PointText: React.FC<PointTextProps>  = ({ pointColor, responsiveText = false, text, responseText }) => {
     return (
         <>
         {responsiveText 
             ? 
             <div className='text-[20px] flex gap-[4px] items-center'>
-                <div className='font-skranji font-bold'>Tablet</div>
+                <div className='font-skranji font-bold'>{responseText}</div>
                 <div>{text}</div>
             </div>
             :

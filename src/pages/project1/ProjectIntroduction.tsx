@@ -5,7 +5,13 @@ import SearchableListBox from "components/SearchableListBox";
 import ProjectSubBox from "components/ProjectSubBox";
 import PointText from "components/PointText";
 
-const ProjectIntroduction1 : React.FC = () => {
+interface ProjectIntroductionProps {
+    title: string;
+    searchTitle: string;
+    page: number;
+}
+
+const ProjectIntroduction : React.FC<ProjectIntroductionProps> = ({ title, searchTitle, page }) => {
     const handleSearchClick = () => {
         console.log("search");
     }
@@ -33,9 +39,9 @@ const ProjectIntroduction1 : React.FC = () => {
                     }}
                 >
                     <div className="w-full h-full flex items-center justify-end gap-0.5 pr-20">
-                        <BubbleBoxTitle title="개발 주요 내용" positionX="13%" positionY="3%" />
+                        <BubbleBoxTitle title={title} positionX="13%" positionY="3%" />
                         <SearchableListBox 
-                            title={"프로젝트 보기"}
+                            title={searchTitle}
                             items={[]}
                             icon={true}
                             showList={false}
@@ -50,9 +56,12 @@ const ProjectIntroduction1 : React.FC = () => {
                     </div>
                 </BubbleBox>
                 <div className="w-full h-[80%] flex gap-[100px] items-center justify-center p-[80px]">
-                     <div className="w-[100%] h-[100%] border border-red-500">
-                        <PointText text="프로젝트 설정 텍스트 컴포넌트" />
-                        <PointText text="프로젝트 설정 텍스트 컴포넌트" responsiveText={true} />
+                     <div className="w-[100%] h-[100%] flex items-center justify-center">
+                        {/* <PointText text="프로젝트 설정 텍스트 컴포넌트" />
+                        <PointText text="버전" responsiveText={true} responseText="Tablet" /> */}
+                        <div className="w-full h-full flex items-center justify-center">
+                            <img src={`/assets/images/project/miru/miru-${page}page.png`} alt={`miru-${page}page`} className="h-full object-contain" />
+                        </div>
                      </div>
                 </div>
             </div>
@@ -60,4 +69,4 @@ const ProjectIntroduction1 : React.FC = () => {
     );
 }
 
-export default ProjectIntroduction1;
+export default ProjectIntroduction;
