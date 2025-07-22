@@ -89,7 +89,6 @@ const End: React.FC = () => {
             <span className="text-primaryyellow">s</span>
             <span className="text-primarygreen">!</span>
           </div>
-         
         </div>
       {/* </div> */}
       {/* 파란색 말풍선(BubbleBox) - 화면 맨 아래, 가로 100% */}
