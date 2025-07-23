@@ -10,6 +10,7 @@ import ProjectTroubleShooting from 'pages/project/ProjectTroubleShooting';
 import ProjectIntroduction from 'pages/project/ProjectIntroduction';
 import End from 'pages/End';
 import { cookkingList, damoList, miruList } from 'data/projectMainList';
+import { miruSub1, miruSub2, miruSub3 } from 'data/projectSubList';
 
 const App: React.FC = () => {
 
@@ -38,7 +39,14 @@ const App: React.FC = () => {
            />
          </div>
          <div className="snap-start h-screen">
-           <ProjectSub />
+           <ProjectSub 
+            pointColor="#F6C33B"
+            pointLightColor="#FBD462"
+            searchTitle="프로젝트 보기"
+            subBox1={miruSub1}
+            subBox2={miruSub2}
+            subBox3={miruSub3}
+           />
          </div>
          <div className="snap-start h-screen">
            <ProjectSkill />

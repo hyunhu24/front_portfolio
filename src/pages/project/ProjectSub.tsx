@@ -4,7 +4,42 @@ import BubbleBoxTitle from "components/BubbleBoxTitle";
 import SearchableListBox from "components/SearchableListBox";
 import ProjectSubBox from "components/ProjectSubBox";
 
-const ProjectSub : React.FC = () => {
+
+export interface ProjectSubItem {
+    title?: string;
+    subTitle?: string;
+    sub?: string;
+}
+
+ export interface SubBoxProps {
+    projectIcon?: string;
+    circleColor?: string;
+    mainTitle?: string;
+    mainSubTitle?: string;
+    items?: ProjectSubItem[];
+}
+
+
+interface ProjectSubProps {
+    pointColor: string;
+    pointLightColor: string;
+    searchTitle: string;
+    subBox1?: SubBoxProps;
+    subBox2?: SubBoxProps;
+    subBox3?: SubBoxProps;
+}
+
+//pointColor = #F6C33B
+//pointLightColor = #FBD462
+//searchTitle = 프로젝트 보기
+//pointColor1 = #f1605a
+//pointColor2 = #52A668
+//pointColor3 = #6493E7
+//projectIcon1 = projectIcon1
+//projectIcon2 = projectIcon2
+//projectIcon3 = projectIcon3
+
+const ProjectSub : React.FC<ProjectSubProps> = ({ pointColor, pointLightColor, subBox1, subBox2, subBox3, searchTitle }) => {
     const handleSearchClick = () => {
         console.log("search");
     }
@@ -13,12 +48,12 @@ const ProjectSub : React.FC = () => {
             <div className="w-full h-full flex-col items-center justify-center">
                 <BubbleBox
                     layout="horizontal"
-                    color="#F6C33B"
+                    color={pointColor}
                     tailDirection="bottom"
                     tailPosition={10}
                     position="center"
                     style={{
-                      background: '#F6C33B',
+                      background: pointColor,
                       boxShadow: '0 2px 16px rgba(0,0,0,0.07)',
                       borderTopLeftRadius: 0,
                       borderTopRightRadius: 0,
@@ -34,14 +69,13 @@ const ProjectSub : React.FC = () => {
                     <div className="w-full h-full flex items-center justify-end gap-0.5 pr-20">
                         <BubbleBoxTitle title="개발 주요 내용" positionX="13%" positionY="3%" />
                         <SearchableListBox 
-                            title={"프로젝트 보기"}
+                            title={searchTitle}
                             items={[]}
                             icon={true}
                             showList={false}
                             readOnly={true}
                             onSearchClick={handleSearchClick}
-                            bgColor='#FBD462'
-                            // activeColor='#EA8268'
+                            bgColor={pointLightColor}
                             width='400px'
                             searchTextSize='20px'
                             listTextSize='18px'
@@ -52,73 +86,28 @@ const ProjectSub : React.FC = () => {
                      <div className="w-[100%] h-[100%] flex flex-row gap-10">
                         <div className="w-[100%] h-[100%] ">
                             <ProjectSubBox 
-                                pointColor="#f1605a"
-                                img="projectIcon1"
-                                mainTitle="성능 최적화 및 유지보수 고려"
-                                items={[
-                                    {
-                                        title: "Lazy Loading 적용",
-                                        subTitle: "React.lazy와 Suspense를 활용하여 비동기 컴포넌트 로딩",
-                                        sub: "결과: 초기 페이지 로딩 속도가 약 40% 개선"
-                                    },
-                                    {
-                                        title: "CSS 최적화",
-                                        subTitle: "SCSS를 사용하여 중복된 스타일 제거 및 BEM 네이밍 규칙 적용",
-                                    },
-                                    {
-                                        title: "코드 스플리팅 (Code Splitting)",
-                                        subTitle: "Webpack의 dynamic import 기능 활용하여 특정 페이지에서만 필요한 모듈을 동적으로 로딩",
-                                        sub: "결과: 불필요한 JS 로드를 줄여 성능 개선"
-                                    }
-                                ]}
+                                pointColor={subBox1?.circleColor}
+                                img={subBox1?.projectIcon}
+                                mainTitle={subBox1?.mainTitle}
+                                items={subBox1?.items}
                             />
                         </div>
                         <div className="w-[100%] h-[100%]">
                             <ProjectSubBox 
-                                pointColor="#52A668"
-                                img="projectIcon2"
-                                mainTitle="React 컴포넌트 기반 개발 및 "
-                                mainSubTitle="유지보수성 개선"
-                                items={[
-                                    {
-                                        title: "Lazy Loading 적용",
-                                        subTitle: "React.lazy와 Suspense를 활용하여 비동기 컴포넌트 로딩",
-                                        sub: "결과: 초기 페이지 로딩 속도가 약 40% 개선"
-                                    },
-                                    {
-                                        title: "CSS 최적화",
-                                        subTitle: "SCSS를 사용하여 중복된 스타일 제거 및 BEM 네이밍 규칙 적용",
-                                    },
-                                    {
-                                        title: "코드 스플리팅 (Code Splitting)",
-                                        subTitle: "Webpack의 dynamic import 기능 활용하여 특정 페이지에서만 필요한 모듈을 동적으로 로딩",
-                                        sub: "결과: 불필요한 JS 로드를 줄여 성능 개선"
-                                    }
-                                ]}
+                                pointColor={subBox2?.circleColor}
+                                img={subBox2?.projectIcon}
+                                mainTitle={subBox2?.mainTitle}
+                                mainSubTitle={subBox2?.mainSubTitle}
+                                items={subBox2?.items} 
                             />
                         </div>
                         <div className="w-[100%] h-[100%]">
                             <ProjectSubBox 
-                                pointColor="#6493E7"
-                                img="projectIcon3"
-                                mainTitle="반응형 웹 사이트 개발"
-                                mainSubTitle="(PC / Tablet / Mobile)"
-                                items={[
-                                    {
-                                        title: "Lazy Loading 적용",
-                                        subTitle: "React.lazy와 Suspense를 활용하여 비동기 컴포넌트 로딩",
-                                        sub: "결과: 초기 페이지 로딩 속도가 약 40% 개선"
-                                    },
-                                    {
-                                        title: "CSS 최적화",
-                                        subTitle: "SCSS를 사용하여 중복된 스타일 제거 및 BEM 네이밍 규칙 적용",
-                                    },
-                                    {
-                                        title: "코드 스플리팅 (Code Splitting)",
-                                        subTitle: "Webpack의 dynamic import 기능 활용하여 특정 페이지에서만 필요한 모듈을 동적으로 로딩",
-                                        sub: "결과: 불필요한 JS 로드를 줄여 성능 개선"
-                                    }
-                                ]}
+                                pointColor={subBox3?.circleColor}
+                                img={subBox3?.projectIcon}
+                                mainTitle={subBox3?.mainTitle}
+                                mainSubTitle={subBox3?.mainSubTitle}
+                                items={subBox3?.items}
                             />
                         </div>
                      </div>
