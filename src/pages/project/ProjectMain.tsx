@@ -4,39 +4,56 @@ import SearchableListBox from 'components/SearchableListBox';
 // import { useLocation, useNavigate } from 'react-router-dom';
 import { useItems } from 'context/ItemContext';
 import ProjectMainTitleBox from 'components/ProjectMainTitleBox';
-
-const colorDots = [
-  'bg-primaryred',
-  'bg-primaryyellow',
-  'bg-primarygreen',
-  'bg-primaryyellow',
-  'bg-primaryred',
-  'bg-primaryblue',
-];
+import { colorDots } from 'data/colorList';
 
 const paginationDots = [0, 1, 2, 3, 4, 5];
 
-const ProjectMain: React.FC = () => {
+interface ProjectMainList {
+  mainText?: string;
+  subText?: string;
+  linkUrl?: string;
+  navigateText?: string;
+}
+
+interface ProjectMainProps {
+  mainId: string;
+  navigateId: string;
+  pointColor: string;
+  textColor: string;
+  num: number;
+  projectName: string;
+  projectImage: string;
+  projectPaddingTop: number;
+  projectMainList: ProjectMainList[];
+}
+//mainId = project-main
+// navigateId = project-sub
+// pointColor = #F6C33B
+// textColor = #F1605A
+// num = 1
+// projectName = MIRU
+// projectImage = miru
+
+const ProjectMain: React.FC<ProjectMainProps> = ({ mainId, navigateId, pointColor, textColor, num, projectName, projectImage, projectPaddingTop, projectMainList }) => {
   const navigateTo = (url: string) => {
     // 스크롤로 해당 섹션으로 이동하는 로직
-    const element = document.getElementById('project-sub');
+    const element = document.getElementById(navigateId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
   return (
-    <div id="project-main" className="w-full h-screen bg-background font-notosans snap-center">
-
+    <div id={mainId} className="w-full h-screen bg-background font-notosans snap-center">
       <div className='h-full w-full flex items-center justify-center'>
         <BubbleBox
           layout="vertical"
-          color="#F6C33B"
+          color={pointColor}
           tailDirection="right"
           tailPosition={60}
           position="left"
           style={{
-            background: '#F6C33B',
+            background: pointColor,
             boxShadow: '0 2px 16px rgba(0,0,0,0.07)',
             borderTopLeftRadius: 0,
             borderTopRightRadius: 0,
@@ -51,9 +68,9 @@ const ProjectMain: React.FC = () => {
         >
           <div className='flex items-center justify-center w-full h-full text-left text-white text-[100px] font-skranji font-[400]'>
             <div className='w-fit'>
-              <span className='text-primaryred'>0</span>1
+              <span style={{color: textColor}}>0</span>{num}
               <br/>
-              MIRU
+              {projectName}
               <br/>
               Project
             </div>
@@ -75,38 +92,14 @@ const ProjectMain: React.FC = () => {
             ))}
           </div>
           <div className="w-full h-full flex items-center justify-center">
-            <img src='/assets/images/project/miru/miru-main.png' alt="profile" className="absolute top-[38px] w-[90%] h-auto object-contain"/>
+            <img src={`/assets/images/project/${projectImage}/${projectImage}-main.png`} alt="profile" className="absolute top-[38px] w-[90%] h-auto object-contain"/>
           </div>
-          <div className="w-full h-full flex items-start justify-center pt-[100px]">
+          <div className="w-full h-full flex items-start justify-center" style={{paddingTop: `${projectPaddingTop}px`}}>
             <ProjectMainTitleBox 
               navigateUrl={"/project1Sub"} 
-              pointColor="#F6C33B" 
+              pointColor={pointColor}
               navigateTo={navigateTo}
-              titleItems={[
-                {
-                  mainText: "프로젝트명",
-                  subText: "MIRU",
-                },
-                {
-                  mainText: "기여도",
-                  subText: "70%",
-                },
-                {
-                  mainText: "사용기술",
-                  subText: "React, JS, CSS, Html5, Webpack, Babel, Git",
-                },
-                {
-                  mainText: "프로젝트 기간",
-                  subText: "2024.05.10 ~ 2024.06.17",
-                },
-                {
-                  mainText: "배포 URL",
-                  linkUrl: "https://miruworld.xyz/"
-                },
-                {
-                  navigateText: "개발 주요 내용 보러가기"
-                }
-              ]} />
+              titleItems={projectMainList} />
             </div>
         </div>
       </div>

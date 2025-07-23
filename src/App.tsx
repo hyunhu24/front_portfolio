@@ -3,18 +3,19 @@ import './styles/App.css';
 import Main from './pages/Main';
 import Intro from './pages/Intro';
 import About from 'pages/About';
-import ProjectMain from 'pages/project1/ProjectMain';
-import ProjectSub from 'pages/project1/ProjectSub';
-import ProjectSkill from 'pages/project1/ProjectSkill';
-import ProjectTroubleShooting from 'pages/project1/ProjectTroubleShooting';
-import ProjectIntroduction from 'pages/project1/ProjectIntroduction';
+import ProjectMain from 'pages/project/ProjectMain';
+import ProjectSub from 'pages/project/ProjectSub';
+import ProjectSkill from 'pages/project/ProjectSkill';
+import ProjectTroubleShooting from 'pages/project/ProjectTroubleShooting';
+import ProjectIntroduction from 'pages/project/ProjectIntroduction';
 import End from 'pages/End';
+import { cookkingList, damoList, miruList } from 'data/projectMainList';
 
 const App: React.FC = () => {
 
   return (
       <div className="w-full h-screen overflow-y-auto snap-y snap-mandatory">
-         <div className="snap-start h-screen">
+         {/* <div className="snap-start h-screen">
            <Main />
          </div>
          <div className="snap-start h-screen">
@@ -22,9 +23,19 @@ const App: React.FC = () => {
          </div>
          <div className="snap-start h-screen">
            <About />
-         </div>
+         </div> */}
          <div className="snap-start h-screen">
-           <ProjectMain />
+           <ProjectMain 
+            mainId="project-main"
+            navigateId="project-sub"
+            pointColor="#F6C33B"
+            textColor="#F1605A"
+            num={1}
+            projectName="MIRU"
+            projectImage="miru"
+            projectPaddingTop={60}
+            projectMainList={miruList}
+           />
          </div>
          <div className="snap-start h-screen">
            <ProjectSub />
@@ -49,6 +60,32 @@ const App: React.FC = () => {
          </div>
          <div className="snap-start h-screen">
            <ProjectIntroduction title="개발 주요 내용5" searchTitle="프로젝트 보기" page={5} />
+         </div>
+         <div className="snap-start h-screen">
+           <ProjectMain 
+            mainId="project-main"
+            navigateId="project-sub"
+            pointColor="#52A668"
+            textColor="#F6C33B"
+            num={2}
+            projectName="CooKKing"
+            projectImage="cookking"
+            projectPaddingTop={0}
+            projectMainList={cookkingList}
+           />
+         </div>
+         <div className="snap-start h-screen">
+           <ProjectMain 
+            mainId="project-main"
+            navigateId="project-sub"
+            pointColor="#6194E7"
+            textColor="#F1605A"
+            num={3}
+            projectName="Damo"
+            projectImage="damo"
+            projectPaddingTop={60}
+            projectMainList={damoList}
+           />
          </div>
          <div className="snap-start h-screen">
            <End />

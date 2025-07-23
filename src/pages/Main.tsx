@@ -3,15 +3,7 @@ import React, { useState } from 'react';
 import BubbleBox from '../components/BubbleBox';
 import SearchableListBox from '../components/SearchableListBox';
 import { useItems } from 'context/ItemContext';
-
-const colorDots = [
-  'bg-primaryblue',
-  'bg-primarygreen',
-  'bg-primaryyellow',
-  'bg-primaryred',
-  'bg-primaryyellow',
-  'bg-primaryblue',
-];
+import { colorDots } from 'data/colorList';
 
 const paginationDots = [0, 1, 2, 3, 4, 5];
 
