@@ -11,6 +11,7 @@ import ProjectIntroduction from 'pages/project/ProjectIntroduction';
 import End from 'pages/End';
 import { cookkingList, damoList, miruList } from 'data/projectMainList';
 import { cookkingSub1, cookkingSub2, cookkingSub3, damoSub1, damoSub2, damoSub3, miruSub1, miruSub2, miruSub3 } from 'data/projectSubList';
+import { cookkingProjectSkillList, damoProjectSkillList, miruProjectSkillList } from 'data/projectSkillList';
 
 const App: React.FC = () => {
 
@@ -50,7 +51,12 @@ const App: React.FC = () => {
            />
          </div>
          <div className="snap-start h-screen">
-           <ProjectSkill />
+           <ProjectSkill 
+            pointColor="#F6C33B"
+            pointLightColor="#FBD462"
+            searchTitle="프로젝트 보기"
+            skillBox={miruProjectSkillList}
+           />
          </div>
          <div className="snap-start h-screen">
            <ProjectTroubleShooting />
@@ -94,6 +100,14 @@ const App: React.FC = () => {
            />
          </div>
          <div className="snap-start h-screen">
+           <ProjectSkill 
+            pointColor="#52A668"
+            pointLightColor="#73C087"
+            searchTitle="프로젝트 보기"
+            skillBox={cookkingProjectSkillList}
+           />
+         </div>
+         <div className="snap-start h-screen">
            <ProjectMain 
             mainId="project-main"
             navigateId="project-sub"
@@ -114,6 +128,14 @@ const App: React.FC = () => {
             subBox1={damoSub1}
             subBox2={damoSub2}
             subBox3={damoSub3}
+           />
+         </div>
+         <div className="snap-start h-screen">
+           <ProjectSkill 
+            pointColor="#6194E7"
+            pointLightColor="#8BB0EF"
+            searchTitle="프로젝트 보기"
+            skillBox={damoProjectSkillList}
            />
          </div>
          <div className="snap-start h-screen">
