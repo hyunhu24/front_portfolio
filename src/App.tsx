@@ -12,6 +12,7 @@ import End from 'pages/End';
 import { cookkingList, damoList, miruList } from 'data/projectMainList';
 import { cookkingSub1, cookkingSub2, cookkingSub3, damoSub1, damoSub2, damoSub3, miruSub1, miruSub2, miruSub3 } from 'data/projectSubList';
 import { cookkingProjectSkillList, damoProjectSkillList, miruProjectSkillList } from 'data/projectSkillList';
+import { miruTroubleShootingList, cookkingTroubleShootingList1, cookkingTroubleShootingList2, damoTroubleShootingList1, damoTroubleShootingList2 } from 'data/troubleShootingList';
 
 const App: React.FC = () => {
 
@@ -59,7 +60,12 @@ const App: React.FC = () => {
            />
          </div>
          <div className="snap-start h-screen">
-           <ProjectTroubleShooting />
+           <ProjectTroubleShooting 
+            pointColor="#F6C33B"
+            pointLightColor="#FBD462"
+            searchTitle="프로젝트 보기"
+            troubleShootingItems={miruTroubleShootingList}
+           />
          </div>
          <div className="snap-start h-screen">
            <ProjectIntroduction title="개발 주요 내용1" searchTitle="프로젝트 보기" page={1} />
@@ -108,6 +114,22 @@ const App: React.FC = () => {
            />
          </div>
          <div className="snap-start h-screen">
+           <ProjectTroubleShooting 
+            pointColor="#52A668"
+            pointLightColor="#73C087"
+            searchTitle="프로젝트 보기"
+            troubleShootingItems={cookkingTroubleShootingList1}
+           />
+         </div>
+         <div className="snap-start h-screen">
+           <ProjectTroubleShooting 
+            pointColor="#52A668"
+            pointLightColor="#73C087"
+            searchTitle="프로젝트 보기"
+            troubleShootingItems={cookkingTroubleShootingList2}
+           />
+         </div>
+         <div className="snap-start h-screen">
            <ProjectMain 
             mainId="project-main"
             navigateId="project-sub"
@@ -136,6 +158,22 @@ const App: React.FC = () => {
             pointLightColor="#8BB0EF"
             searchTitle="프로젝트 보기"
             skillBox={damoProjectSkillList}
+           />
+         </div>
+         <div className="snap-start h-screen">
+           <ProjectTroubleShooting 
+            pointColor="#6194E7"
+            pointLightColor="#8BB0EF"
+            searchTitle="프로젝트 보기"
+            troubleShootingItems={damoTroubleShootingList1}
+           />
+         </div>
+         <div className="snap-start h-screen">
+           <ProjectTroubleShooting 
+            pointColor="#6194E7"
+            pointLightColor="#8BB0EF"
+            searchTitle="프로젝트 보기"
+            troubleShootingItems={damoTroubleShootingList2}
            />
          </div>
          <div className="snap-start h-screen">
