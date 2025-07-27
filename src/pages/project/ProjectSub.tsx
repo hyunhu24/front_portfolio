@@ -27,6 +27,7 @@ interface ProjectSubProps {
     subBox1?: SubBoxProps;
     subBox2?: SubBoxProps;
     subBox3?: SubBoxProps;
+    miruProject?: boolean;
 }
 
 //pointColor = #F6C33B
@@ -39,7 +40,7 @@ interface ProjectSubProps {
 //projectIcon2 = projectIcon2
 //projectIcon3 = projectIcon3
 
-const ProjectSub : React.FC<ProjectSubProps> = ({ pointColor, pointLightColor, subBox1, subBox2, subBox3, searchTitle }) => {
+const ProjectSub : React.FC<ProjectSubProps> = ({ pointColor, pointLightColor, subBox1, subBox2, subBox3, searchTitle, miruProject }) => {
     const handleSearchClick = () => {
         console.log("search");
     }
@@ -90,6 +91,7 @@ const ProjectSub : React.FC<ProjectSubProps> = ({ pointColor, pointLightColor, s
                                 img={subBox1?.projectIcon}
                                 mainTitle={subBox1?.mainTitle}
                                 items={subBox1?.items}
+                                miruProject={miruProject}
                             />
                         </div>
                         <div className="w-[100%] h-[100%]">
@@ -99,6 +101,7 @@ const ProjectSub : React.FC<ProjectSubProps> = ({ pointColor, pointLightColor, s
                                 mainTitle={subBox2?.mainTitle}
                                 mainSubTitle={subBox2?.mainSubTitle}
                                 items={subBox2?.items} 
+                                miruProject={miruProject}
                             />
                         </div>
                         <div className="w-[100%] h-[100%]">
@@ -108,6 +111,7 @@ const ProjectSub : React.FC<ProjectSubProps> = ({ pointColor, pointLightColor, s
                                 mainTitle={subBox3?.mainTitle}
                                 mainSubTitle={subBox3?.mainSubTitle}
                                 items={subBox3?.items}
+                                miruProject={miruProject}
                             />
                         </div>
                      </div>

@@ -12,6 +12,7 @@ interface ProjectSubProps {
     mainTitle?:string;
     mainSubTitle?:string;
     items?: SubTitleItem[];
+    miruProject?: boolean;
 }
 
 const ProjectSubBox: React.FC<ProjectSubProps> = ({
@@ -19,7 +20,8 @@ const ProjectSubBox: React.FC<ProjectSubProps> = ({
     img = 'projectIcon1',
     mainTitle = 'test1',
     mainSubTitle,
-    items = []
+    items = [],
+    miruProject = false
 }) => {
     return (
         <div className="w-[100%] h-[100%]">
@@ -30,10 +32,10 @@ const ProjectSubBox: React.FC<ProjectSubProps> = ({
                     style={{backgroundColor : pointColor}}
                     className='w-[35%] h-auto aspect-square rounded-full flex items-center justify-center'>
                     <img src={`/assets/images/project/icon/${img}.png`} alt="projectIcon1"
-                        className='w-[35%] h-[35%] object-cover' />
+                        className='w-[35%] h-[35%] object-contain' />
                 </div>
                 {/* 개발 포인트 타이틀 */}
-                <div className='text-[24px] text-center font-bold h-[70px]'>{mainTitle} <br /> {mainSubTitle && mainSubTitle}</div>
+                <div style={{height: miruProject ? '70px' : '40px'}} className='text-[24px] text-center font-bold'>{mainTitle} <br /> {mainSubTitle && mainSubTitle}</div>
                 {/* 보더 영역 / 색상 props 설정 */}
                 <div style={{backgroundColor : pointColor}} className='h-[7px] w-[100%] rounded-full'></div>
             </div>
@@ -41,8 +43,8 @@ const ProjectSubBox: React.FC<ProjectSubProps> = ({
                 {items?.map((item, idx) => (
                     <div key={idx} className='mb-2'>
                         {item.title && <div className='font-bold'>{item.title}</div>}
-                        {item.subTitle && <div className='pl-2'><span className='pr-2'>⦁</span> {item.subTitle}</div>}
-                        {item.sub && <div className='pl-2'><span className='pr-2'>⦁</span> {item.sub}</div>}
+                        {item.subTitle && <div className='pl-2 flex items-start'><div className='pr-2'>⦁</div> <div>{item.subTitle}</div></div>}
+                        {item.sub && <div className='pl-2 flex items-start'><div className='pr-2'>⦁</div> <div>{item.sub}</div></div>}
                     </div>
                 ))}
             </div>
