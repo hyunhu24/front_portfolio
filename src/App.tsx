@@ -18,7 +18,7 @@ const App: React.FC = () => {
 
   return (
       <div className="w-full h-screen overflow-y-auto snap-y snap-mandatory">
-         {/* <div className="snap-start h-screen">
+         <div className="snap-start h-screen">
            <Main />
          </div>
          <div className="snap-start h-screen">
@@ -26,7 +26,7 @@ const App: React.FC = () => {
          </div>
          <div className="snap-start h-screen">
            <About />
-         </div> */}
+         </div>
          <div className="snap-start h-screen">
            <ProjectMain 
             mainId="project-main"
