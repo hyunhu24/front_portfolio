@@ -68,19 +68,20 @@ const App: React.FC = () => {
            />
          </div>
          <div className="snap-start h-screen">
-           <ProjectIntroduction title="개발 주요 내용1" searchTitle="프로젝트 보기" page={1} />
+           <ProjectIntroduction 
+           title="개발 주요 내용1" searchTitle="프로젝트 보기" page={1} project="miru" pointColor="#F6C33B" pointLightColor="#FBD462" />
          </div>
          <div className="snap-start h-screen">
-           <ProjectIntroduction title="개발 주요 내용2" searchTitle="프로젝트 보기" page={2} />
+           <ProjectIntroduction title="개발 주요 내용2" searchTitle="프로젝트 보기" page={2} project="miru" pointColor="#F6C33B" pointLightColor="#FBD462" />
          </div>
          <div className="snap-start h-screen">
-           <ProjectIntroduction title="개발 주요 내용3" searchTitle="프로젝트 보기" page={3} />
+           <ProjectIntroduction title="개발 주요 내용3" searchTitle="프로젝트 보기" page={3} project="miru" pointColor="#F6C33B" pointLightColor="#FBD462" />
          </div>
          <div className="snap-start h-screen">
-           <ProjectIntroduction title="개발 주요 내용4" searchTitle="프로젝트 보기" page={4} />
+           <ProjectIntroduction title="개발 주요 내용4" searchTitle="프로젝트 보기" page={4} project="miru" pointColor="#F6C33B" pointLightColor="#FBD462" />
          </div>
          <div className="snap-start h-screen">
-           <ProjectIntroduction title="개발 주요 내용5" searchTitle="프로젝트 보기" page={5} />
+           <ProjectIntroduction title="개발 주요 내용5" searchTitle="프로젝트 보기" page={5} project="miru" pointColor="#F6C33B" pointLightColor="#FBD462" />
          </div>
          <div className="snap-start h-screen">
            <ProjectMain 
@@ -128,6 +129,25 @@ const App: React.FC = () => {
             searchTitle="프로젝트 보기"
             troubleShootingItems={cookkingTroubleShootingList2}
            />
+         </div>
+         <div className="snap-start h-screen">
+           <ProjectIntroduction 
+           title="개발 주요 내용1" searchTitle="프로젝트 보기" page={1} project="cookking" pointColor="#52A668" pointLightColor="#73C087" />
+         </div>
+         <div className="snap-start h-screen">
+           <ProjectIntroduction title="개발 주요 내용2" searchTitle="프로젝트 보기" page={2} project="cookking" pointColor="#52A668" pointLightColor="#73C087" />
+         </div>
+         <div className="snap-start h-screen">
+           <ProjectIntroduction title="개발 주요 내용3" searchTitle="프로젝트 보기" page={3} project="cookking" pointColor="#52A668" pointLightColor="#73C087" />
+         </div>
+         <div className="snap-start h-screen">
+           <ProjectIntroduction title="개발 주요 내용4" searchTitle="프로젝트 보기" page={4} project="cookking" pointColor="#52A668" pointLightColor="#73C087" />
+         </div>
+         <div className="snap-start h-screen">
+           <ProjectIntroduction title="개발 주요 내용5" searchTitle="프로젝트 보기" page={5} project="cookking" pointColor="#52A668" pointLightColor="#73C087" />
+         </div>
+         <div className="snap-start h-screen">
+           <ProjectIntroduction title="개발 주요 내용6" searchTitle="프로젝트 보기" page={6} project="cookking" pointColor="#52A668" pointLightColor="#73C087" />
          </div>
          <div className="snap-start h-screen">
            <ProjectMain 

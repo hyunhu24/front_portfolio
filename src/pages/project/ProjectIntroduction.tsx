@@ -9,9 +9,12 @@ interface ProjectIntroductionProps {
     title: string;
     searchTitle: string;
     page: number;
+    project: string;
+    pointColor: string;
+    pointLightColor: string;
 }
 
-const ProjectIntroduction : React.FC<ProjectIntroductionProps> = ({ title, searchTitle, page }) => {
+const ProjectIntroduction : React.FC<ProjectIntroductionProps> = ( { title, searchTitle, page, project, pointColor, pointLightColor } : ProjectIntroductionProps ) => {
     const handleSearchClick = () => {
         console.log("search");
     }
@@ -20,12 +23,12 @@ const ProjectIntroduction : React.FC<ProjectIntroductionProps> = ({ title, searc
             <div className="w-full h-full flex-col items-center justify-center">
                 <BubbleBox
                     layout="horizontal"
-                    color="#F6C33B"
+                    color={pointColor}
                     tailDirection="bottom"
                     tailPosition={10}
                     position="center"
                     style={{
-                      background: '#F6C33B',
+                      background: pointColor,
                       boxShadow: '0 2px 16px rgba(0,0,0,0.07)',
                       borderTopLeftRadius: 0,
                       borderTopRightRadius: 0,
@@ -47,7 +50,7 @@ const ProjectIntroduction : React.FC<ProjectIntroductionProps> = ({ title, searc
                             showList={false}
                             readOnly={true}
                             onSearchClick={handleSearchClick}
-                            bgColor='#FBD462'
+                            bgColor={pointLightColor}
                             // activeColor='#EA8268'
                             width='400px'
                             searchTextSize='20px'
@@ -60,7 +63,7 @@ const ProjectIntroduction : React.FC<ProjectIntroductionProps> = ({ title, searc
                         {/* <PointText text="프로젝트 설정 텍스트 컴포넌트" />
                         <PointText text="버전" responsiveText={true} responseText="Tablet" /> */}
                         <div className="w-full h-full flex items-center justify-center">
-                            <img src={`/assets/images/project/miru/miru-${page}page.png`} alt={`miru-${page}page`} className="h-full object-contain" />
+                            <img src={`/assets/images/project/${project}/${project}-${page}page.png`} alt={`${project}-${page}page`} className="h-full object-contain" />
                         </div>
                      </div>
                 </div>
