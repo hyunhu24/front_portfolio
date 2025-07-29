@@ -21,9 +21,10 @@ interface ProjectSkillProps {
     pointLightColor?: string;
     searchTitle?: string;
     skillBox?: skillProps;
+    project?: string;
 }
 
-const ProjectSkill : React.FC<ProjectSkillProps> = ({ pointColor, pointLightColor, searchTitle, skillBox }) => {
+const ProjectSkill : React.FC<ProjectSkillProps> = ( { pointColor, pointLightColor, searchTitle, skillBox, project } : ProjectSkillProps ) => {
     const handleSearchClick = () => {
         console.log("search");
     }
@@ -78,7 +79,7 @@ const ProjectSkill : React.FC<ProjectSkillProps> = ({ pointColor, pointLightColo
                            />
                         </div>
                         <div className="w-[600px] ">
-                            코드 이미지가 들어갈 공간
+                        <img src={`/assets/images/project/${project}/${project}-code.png`} alt={`${project}-code`} className="h-full object-contain" />
                         </div>
                      </div>
                 </div>

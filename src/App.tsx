@@ -57,6 +57,7 @@ const App: React.FC = () => {
             pointLightColor="#FBD462"
             searchTitle="프로젝트 보기"
             skillBox={miruProjectSkillList}
+            project="miru"
            />
          </div>
          <div className="snap-start h-screen">
@@ -112,6 +113,7 @@ const App: React.FC = () => {
             pointLightColor="#73C087"
             searchTitle="프로젝트 보기"
             skillBox={cookkingProjectSkillList}
+            project="cookking"
            />
          </div>
          <div className="snap-start h-screen">
@@ -178,6 +180,7 @@ const App: React.FC = () => {
             pointLightColor="#8BB0EF"
             searchTitle="프로젝트 보기"
             skillBox={damoProjectSkillList}
+            project="damo"
            />
          </div>
          <div className="snap-start h-screen">
@@ -195,6 +198,25 @@ const App: React.FC = () => {
             searchTitle="프로젝트 보기"
             troubleShootingItems={damoTroubleShootingList2}
            />
+         </div>
+         <div className="snap-start h-screen">
+           <ProjectIntroduction 
+           title="개발 주요 내용1" searchTitle="프로젝트 보기" page={1} project="damo" pointColor="#6194E7" pointLightColor="#8BB0EF" />
+         </div>
+         <div className="snap-start h-screen">
+           <ProjectIntroduction title="개발 주요 내용2" searchTitle="프로젝트 보기" page={2} project="damo" pointColor="#6194E7" pointLightColor="#8BB0EF" />
+         </div>
+         <div className="snap-start h-screen">
+           <ProjectIntroduction title="개발 주요 내용3" searchTitle="프로젝트 보기" page={3} project="damo" pointColor="#6194E7" pointLightColor="#8BB0EF" />
+         </div>
+         <div className="snap-start h-screen">
+           <ProjectIntroduction title="개발 주요 내용4" searchTitle="프로젝트 보기" page={4} project="damo" pointColor="#6194E7" pointLightColor="#8BB0EF" />
+         </div>
+         <div className="snap-start h-screen">
+           <ProjectIntroduction title="개발 주요 내용5" searchTitle="프로젝트 보기" page={5} project="damo" pointColor="#6194E7" pointLightColor="#8BB0EF" />
+         </div>
+         <div className="snap-start h-screen">
+           <ProjectIntroduction title="개발 주요 내용6" searchTitle="프로젝트 보기" page={6} project="damo" pointColor="#6194E7" pointLightColor="#8BB0EF" />
          </div>
          <div className="snap-start h-screen">
            <End />
