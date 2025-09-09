@@ -42,7 +42,7 @@ const About : React.FC = () => {
                     }}
                 >
                     <div className="w-full h-full flex items-center justify-end gap-0.5 pr-20">
-                        <BubbleBoxTitle title="Project 1" positionX="13%" positionY="3%" fontFamily="font-skranji" />
+                        <BubbleBoxTitle title="About Me" positionX="13%" positionY="3%" fontFamily="font-skranji" />
                         <SearchableListBox 
                             title={"프로젝트 보기"}
                             items={[]}
@@ -67,15 +67,15 @@ const About : React.FC = () => {
                             <InformBox title="개인정보" items={[
                                 {mainText:"Phone", subText:"010.8673.7686"},
                                 {mainText:"Email", subText:"gusgn24@gmail.com"},
-                                {mainText:"Github", subText:"https://github.com/hyunhu24"},
-                                {mainText:"Blog", subText:"https://hoostudy.tistory.com"}
+                                {mainText:"Github", linkUrl:"https://github.com/hyunhu24"},
+                                {mainText:"Blog", linkUrl:"https://hoostudy.tistory.com"}
                             ]}/>
                         </div>
                     </div>
                     <div className={combineClasses(twClasses.flexColBetween, "h-full w-full")}>
                         <InformBox title="경력" pointColor="#F1605A" items={[
                             {mainText:"크리에이티브 코드", subText:"2023.07 - 2024.10", sub:"퍼블리싱 및 프론트 앤드"},
-                            {mainText:"하바킨더슐레", subText:"2021.03 - 2022.02", sub:"담임 1년"},
+                            {mainText:"하바킨더슐레 (비개발)", subText:"2021.03 - 2022.02", sub:"담임 1년"},
                             // {mainText:"test1", subText:"subText1", sub:"sub"}
                         ]}/>
                          <InformBox title="학력/교육" pointColor="#52A668" items={[
@@ -99,7 +99,7 @@ const About : React.FC = () => {
                             {img: "Figma"},
                             {img: "AdobePhotoshop"},
                             {img: "AdobeIllustrator"},
-                            {img: "Github"},
+                            {img: "GitHub"},
                             {img: "Slack"},
                             {img: "Notion"},
                             {img: "Tailwind"},

@@ -5,6 +5,7 @@ interface InformItem {
     mainText? : string;
     subText? : string;
     sub? : string;
+    linkUrl? : string;
 }
 interface InformImgItem{
     img? : string;
@@ -38,6 +39,7 @@ const InformBox : React.FC<InformBoxProps> = ({
                                 {item.subText} 
                                 {item.sub && <span className="pl-[20px] text-[15px] font-normal">{item.sub}</span>}    
                             </div>
+                            {item.linkUrl && <a href={item.linkUrl} target="_blank" rel="noreferrer" className="font-medium">{item.linkUrl}</a>}
                         </div>
                     </div>
                 ))}
