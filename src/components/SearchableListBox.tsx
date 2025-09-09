@@ -53,6 +53,7 @@ const SearchableListBox: React.FC<SearchableListBoxProps> = ({
 
   const handleItemClick = (filteredIdx: number) => {
     const originalIdx = filteredItems[filteredIdx].__originalIndex;
+    setSelectedIndex(originalIdx);
     if (items[originalIdx]?.onClick) {
       items[originalIdx].onClick();
     }
@@ -102,7 +103,8 @@ const SearchableListBox: React.FC<SearchableListBoxProps> = ({
             <button
               key={item.label}
               onClick={() => handleItemClick(idx)}
-              className={`text-left px-4 py-4 transition font-notosans ${item.__originalIndex === selectedIndex ? 'font-bold text-white border-b border-white/36' : 'text-white/90'}`}
+              onMouseDown={() => handleItemClick(idx)}
+              className={`text-left px-4 py-4 transition font-notosans ${item.__originalIndex === selectedIndex ? 'font-bold text-white border-b border-white/36' : 'text-white/90 font-medium'}`}
               style={{ 
                 fontSize: listTextSize,
                 outline: 'none',

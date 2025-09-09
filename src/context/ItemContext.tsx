@@ -22,7 +22,7 @@ interface ItemContextType {
 const ItemContext = createContext<ItemContextType | undefined>(undefined);
 
 export const ItemProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [selectedIndex, setSelectedIndex] = useState(1);
+  const [selectedIndex, setSelectedIndex] = useState(0);
   const [items, setItems] = useState<ListItem[]>(itemsList);
 
   const selectedItem = items[selectedIndex];

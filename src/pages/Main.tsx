@@ -9,9 +9,9 @@ const paginationDots = [0, 1, 2, 3, 4, 5];
 
 const Main: React.FC = () => {
 
+  // const navigate = useNavigate();
   const [open, setOpen] = useState(true);
   const { setSelectedIndex } = useItems();
-  // const navigate = useNavigate();
 
   const itemsList = [
     {
@@ -109,7 +109,7 @@ const Main: React.FC = () => {
         >
           <div className="w-full h-[100%] flex gap-0.5 pt-8 items-start justify-center">
               <SearchableListBox
-                title="채현후"
+                title="🔍︎ 채현후"
                 items = {itemsList}
                 icon={false}
                 onClose={() => setOpen(false)}

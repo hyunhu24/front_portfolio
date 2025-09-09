@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import BubbleBox from '../components/BubbleBox';
 import SearchableListBox from 'components/SearchableListBox';
-// import { useLocation, useNavigate } from 'react-router-dom';
 import { useItems } from 'context/ItemContext';
 import { colorDots } from 'data/colorList';
 
@@ -10,35 +9,43 @@ const paginationDots = [0, 1, 2, 3, 4, 5];
 const Intro: React.FC = () => {
   const [isListVisible, setIsListVisible] = useState(false);
   const { selectedIndex, setSelectedIndex, items, selectedItem } = useItems();
-  // const navigate = useNavigate();
-  // const location = useLocation();
 
-  console.log(selectedItem, items, selectedItem);
 
-  // useEffect(() => {
-  //   const params = new URLSearchParams(location.search);
-  //   const idx = parseInt(params.get('item') ?? '1', 10);
-  //   if (!isNaN(idx) && idx >= 0 && idx < items.length) {
-  //     setSelectedIndex(idx);
-  //   }
-  // }, [location, setSelectedIndex, items.length]);
-
-  const introItems = items.map((item, idx) => ({
-    ...item,
-    active: idx === selectedIndex,
-    onClick: () => {
-      setSelectedIndex(idx);
-      // navigate(`/intro?item=2`);
-    }
-  }));
+  console.log(selectedIndex);
 
   const handleFocus = () => {
     setIsListVisible(true);
   };
 
   const handleBlur = () => {
-    setIsListVisible(false);
+    setTimeout(() => {
+      setIsListVisible(false);
+    }, 10);
   };
+
+  const introItems = [
+    {
+      label: '성장과 도전을 멈추지 않는 개발자 채현후',
+      active: false,
+      onClick: () => {
+        setSelectedIndex(0);
+      },
+    },
+    {
+      label: 'UI와 UX를 고민하는 프론트 개발자 채현후',
+      active: true,
+      onClick: () => {
+        setSelectedIndex(1);
+      },
+    },
+    {
+      label: '새로운 도전을 통해 성장하는 프론트 개발자 채현후',
+      active: false,
+      onClick: () => {
+        setSelectedIndex(2);
+      },
+    },
+  ];
 
   return (
     <div id="intro" className="w-full h-screen bg-background font-notosans snap-center overflow-hidden">
