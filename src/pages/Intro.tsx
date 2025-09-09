@@ -87,6 +87,7 @@ const Intro: React.FC = () => {
           <SearchableListBox 
             title={selectedItem.label}
             items={introItems}
+            readOnly={true}
             icon={true}
             showList={isListVisible}
             onFocus={handleFocus}
