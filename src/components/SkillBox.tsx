@@ -20,14 +20,14 @@ const SkillBox: React.FC<SkillBoxProps> = ({
     return (
         <div className='flex flex-col gap-[50px]'>
             <div className='flex gap-[20px] items-center'>
-                <img src="/assets/images/project/skillIcon/idea.png" alt="idea" />
+                <img src="/assets/images/project/skillIcon/Idea.png" alt="idea" />
                 <div>
                     <div className='text-[24px] font-bold'>{mainTitle}</div>
                     <div className='text-[22px] font-medium'>{subTitle}</div>
                 </div>
             </div>
             <div className='flex gap-[20px] items-center'>
-                <img src="/assets/images/project/skillIcon/check.png" alt="check" />
+                <img src="/assets/images/project/skillIcon/Check.png" alt="check" />
                 <div>
                     {items.map((item, idx) => (
                         <div key={idx}>
