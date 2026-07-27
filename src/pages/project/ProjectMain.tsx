@@ -92,7 +92,7 @@ const ProjectMain: React.FC<ProjectMainProps> = ({ mainId, navigateId, pointColo
             ))}
           </div>
           <div className="w-full h-full flex items-center justify-center">
-            <img src={`/assets/images/project/${projectImage}/${projectImage}-main.png`} alt="profile" className="absolute top-[38px] w-[90%] h-auto object-contain"/>
+            <img src={`${process.env.PUBLIC_URL}/assets/images/project/${projectImage}/${projectImage}-main.png`} alt="profile" className="absolute top-[38px] w-[90%] h-auto object-contain"/>
           </div>
           <div className="w-full h-full flex items-start justify-center" style={{paddingTop: `${projectPaddingTop}px`}}>
             <ProjectMainTitleBox 

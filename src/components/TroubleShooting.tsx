@@ -18,7 +18,7 @@ const TroubleShooting: React.FC<TroubleShootingProps> = ({ img, sections }) => {
   return (
     <div className='w-fit max-w-[1030px]'>
       <div className='flex flex-row gap-[40px] items-start'>
-        <img className='w-[110px] h-[110px]' src={`/assets/images/project/numIcon/${img}.png`} alt="troubleShooting1" />
+        <img className='w-[110px] h-[110px]' src={`${process.env.PUBLIC_URL}/assets/images/project/numIcon/${img}.png`} alt="troubleShooting1" />
         <div className='flex flex-col gap-[8px]'>
           {/* <div className='text-[30px] font-bold mb-[16px]'>{mainTitle}</div> */}
             {sections.map((section, sectionIdx) => (

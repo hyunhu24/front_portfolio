@@ -49,7 +49,7 @@ const InformBox : React.FC<InformBoxProps> = ({
                     <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-5 xl:grid-cols-5 gap-4 sm:gap-6 md:gap-8 items-center justify-items-center"> 
                     {imgItems.map((item, idx) => (
                         <div key={idx} className="w-full max-w-24 min-w-16 flex items-center justify-center p-2">
-                            <img src={`/assets/images/icon/${item.img}.png`} alt={`${item.img}`} 
+                            <img src={`${process.env.PUBLIC_URL}/assets/images/icon/${item.img}.png`} alt={`${item.img}`} 
                                 className="w-full h-auto object-contain"/>
                         </div>
                     ))}

@@ -44,7 +44,7 @@ export const cookkingList = [
   },
   {
     mainText: "발표 자료",
-    linkUrl: "/cookking-pdf.pdf",
+    linkUrl: `${process.env.PUBLIC_URL}/cookking-pdf.pdf`,
   },
   {
     navigateText: "개발 주요 내용 보러가기",

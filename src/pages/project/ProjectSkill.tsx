@@ -79,7 +79,7 @@ const ProjectSkill : React.FC<ProjectSkillProps> = ( { pointColor, pointLightCol
                            />
                         </div>
                         <div className="w-[600px] ">
-                        <img src={`/assets/images/project/${project}/${project}-code.png`} alt={`${project}-code`} className="h-full object-contain" />
+                        <img src={`${process.env.PUBLIC_URL}/assets/images/project/${project}/${project}-code.png`} alt={`${project}-code`} className="h-full object-contain" />
                         </div>
                      </div>
                 </div>

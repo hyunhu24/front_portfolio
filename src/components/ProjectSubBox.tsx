@@ -31,7 +31,7 @@ const ProjectSubBox: React.FC<ProjectSubProps> = ({
                 <div
                     style={{backgroundColor : pointColor}}
                     className='w-[35%] h-auto aspect-square rounded-full flex items-center justify-center'>
-                    <img src={`/assets/images/project/icon/${img}.png`} alt="projectIcon1"
+                    <img src={`${process.env.PUBLIC_URL}/assets/images/project/icon/${img}.png`} alt="projectIcon1"
                         className='w-[35%] h-[35%] object-contain' />
                 </div>
                 {/* 개발 포인트 타이틀 */}

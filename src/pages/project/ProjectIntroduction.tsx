@@ -63,7 +63,7 @@ const ProjectIntroduction : React.FC<ProjectIntroductionProps> = ( { title, sear
                         {/* <PointText text="프로젝트 설정 텍스트 컴포넌트" />
                         <PointText text="버전" responsiveText={true} responseText="Tablet" /> */}
                         <div className="w-full h-full flex items-center justify-center">
-                            <img src={`/assets/images/project/${project}/${project}-${page}page.png`} alt={`${project}-${page}page`} className="h-full object-contain" />
+                            <img src={`${process.env.PUBLIC_URL}/assets/images/project/${project}/${project}-${page}page.png`} alt={`${project}-${page}page`} className="h-full object-contain" />
                         </div>
                      </div>
                 </div>

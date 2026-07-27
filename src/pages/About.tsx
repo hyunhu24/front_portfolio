@@ -74,7 +74,7 @@ const About: React.FC = () => {
           >
             <div className="w-[100%] h-[50%] flex items-start justify-start pl-10">
               <img
-                src="/assets/images/about/profile_about.png"
+                src={`${process.env.PUBLIC_URL}/assets/images/about/profile_about.png`}
                 alt="profile"
                 className="w-[230px] h-auto object-contain"
               />
