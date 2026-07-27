@@ -36,7 +36,7 @@ export const cookkingList = [
   },
   {
     mainText: "프로젝트 기간",
-    subText: "2024.04.03 ~ 2024.05.31",
+    subText: "2025.04.03 ~ 2025.05.31",
   },
   {
     mainText: "배포 URL",
@@ -66,7 +66,7 @@ export const damoList = [
   },
   {
     mainText: "프로젝트 기간",
-    subText: "2024.03.11 ~ 2024.04.02",
+    subText: "2025.03.11 ~ 2025.04.02",
   },
   {
     mainText: "다모 웹 URL",
