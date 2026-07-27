@@ -10,7 +10,7 @@ const paginationDots = [0, 1, 2, 3, 4, 5];
 const Main: React.FC = () => {
 
   // const navigate = useNavigate();
-  const [open, setOpen] = useState(true);
+  const [, setOpen] = useState(true);
   const { setSelectedIndex } = useItems();
 
   const itemsList = [

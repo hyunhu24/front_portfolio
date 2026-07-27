@@ -1,8 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import BubbleBox from 'components/BubbleBox';
-import SearchableListBox from 'components/SearchableListBox';
 // import { useLocation, useNavigate } from 'react-router-dom';
-import { useItems } from 'context/ItemContext';
 import ProjectMainTitleBox from 'components/ProjectMainTitleBox';
 import { colorDots } from 'data/colorList';
 

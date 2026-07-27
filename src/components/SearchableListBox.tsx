@@ -1,4 +1,3 @@
-import { color } from 'framer-motion';
 import React, { useState } from 'react';
 import { IconType } from 'react-icons';
 import { IoIosSearch } from "react-icons/io";

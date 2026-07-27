@@ -2,7 +2,6 @@ import React from "react";
 import BubbleBox from "components/BubbleBox";
 import BubbleBoxTitle from "components/BubbleBoxTitle";
 import SearchableListBox from "components/SearchableListBox";
-import ProjectSubBox from "components/ProjectSubBox";
 import SkillBox from "components/SkillBox";
 
 export interface ProjectSkillItem {

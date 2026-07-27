@@ -2,8 +2,6 @@ import React from "react";
 import BubbleBox from "components/BubbleBox";
 import BubbleBoxTitle from "components/BubbleBoxTitle";
 import SearchableListBox from "components/SearchableListBox";
-import ProjectSubBox from "components/ProjectSubBox";
-import PointText from "components/PointText";
 
 interface ProjectIntroductionProps {
     title: string;

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import BubbleBox from '../components/BubbleBox';
 import SearchableListBox from 'components/SearchableListBox';
 import { useItems } from 'context/ItemContext';
@@ -8,7 +8,7 @@ const paginationDots = [0, 1, 2, 3, 4, 5];
 
 const Intro: React.FC = () => {
   const [isListVisible, setIsListVisible] = useState(false);
-  const { selectedIndex, setSelectedIndex, items, selectedItem } = useItems();
+  const { selectedIndex, setSelectedIndex, selectedItem } = useItems();
 
 
   console.log(selectedIndex);
